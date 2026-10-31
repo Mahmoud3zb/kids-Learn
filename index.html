@@ -1,77 +1,2604 @@
 <!doctype html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Little Steps | تعلّم والعب</title>
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap');
-:root{--ink:#24324a;--muted:#718096;--purple:#8067e8;--purple2:#a99af8;--pink:#ff8eaa;--yellow:#ffd66b;--mint:#75d9c1;--sky:#8bd4ff;--paper:#fffdf9;--line:#eeeaf8;--green:#24b58b}
-*{box-sizing:border-box}body{margin:0;font-family:'Cairo',system-ui,sans-serif;color:var(--ink);background:#f6f5ff;background-image:radial-gradient(#e3defe 1px,transparent 1px);background-size:22px 22px}button{font:inherit;cursor:pointer;border:0}button:focus-visible{outline:3px solid #29234f;outline-offset:3px}.app{max-width:1180px;margin:auto;padding:18px}.topbar{display:flex;align-items:center;justify-content:space-between;gap:12px;background:#fff;padding:12px 18px;border-radius:24px;box-shadow:0 8px 25px #5544a00d;position:sticky;top:10px;z-index:10}.brand{display:flex;align-items:center;gap:10px;font-weight:900;font-size:20px}.brand-icon{display:grid;place-items:center;width:44px;height:44px;border-radius:15px;background:linear-gradient(135deg,var(--yellow),var(--pink));font-size:25px}.brand small{display:block;color:var(--muted);font-size:11px;font-weight:600;margin-top:-4px}.top-actions{display:flex;gap:8px;align-items:center}.pill{padding:9px 13px;border-radius:15px;background:#f4f1ff;color:#6251bb;font-weight:800}.star-pill{background:#fff5d7;color:#9a6b00}.hero{margin:22px 0 18px;padding:27px 30px;border-radius:30px;background:linear-gradient(115deg,#e9e4ff,#fff0f4 68%,#fff9df);display:grid;grid-template-columns:1.3fr .7fr;align-items:center;overflow:hidden;position:relative}.eyebrow{display:inline-block;background:#fff;border-radius:99px;padding:5px 12px;font-size:12px;font-weight:800;color:#6e59cb}.hero h1{font-size:clamp(27px,4vw,43px);line-height:1.3;margin:12px 0 7px;font-weight:900}.hero p{margin:0 0 18px;color:#64708a;max-width:540px}.primary{background:var(--purple);color:white;padding:12px 20px;border-radius:16px;font-weight:900;box-shadow:0 7px 0 #5e49c4;transition:.15s}.primary:active{transform:translateY(4px);box-shadow:0 3px 0 #5e49c4}.hero-art{font-size:110px;text-align:center;filter:drop-shadow(0 12px 10px #8a75c326);transform:rotate(-6deg)}.section-head{display:flex;align-items:center;justify-content:space-between;margin:24px 3px 12px}.section-head h2{font-size:21px;margin:0;font-weight:900}.section-head span{color:var(--muted);font-size:13px}.activities{display:grid;grid-template-columns:repeat(4,1fr);gap:13px}.activity{background:white;border:2px solid transparent;border-radius:23px;padding:17px;text-align:right;box-shadow:0 7px 20px #5447a00a;transition:.2s;min-height:145px}.activity:hover{transform:translateY(-3px);border-color:#ded6ff}.activity .emoji{width:52px;height:52px;display:grid;place-items:center;border-radius:17px;font-size:28px;margin-bottom:10px}.activity h3{margin:0 0 3px;font-size:16px}.activity p{margin:0;color:var(--muted);font-size:12px}.activity:nth-child(1) .emoji{background:#e9e4ff}.activity:nth-child(2) .emoji{background:#fff0c9}.activity:nth-child(3) .emoji{background:#ffe2eb}.activity:nth-child(4) .emoji{background:#dff8f0}.content-card{margin-top:20px;background:white;border-radius:28px;padding:22px;box-shadow:0 9px 25px #5447a00a}.view{display:none}.view.active{display:block}.lesson-head{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:16px}.lesson-head h2{margin:0;font-size:23px}.back-btn{background:#f3f1ff;color:#6656bd;border-radius:13px;padding:8px 13px;font-weight:800}.trace-layout{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(220px,.8fr);gap:18px}.trace-board{background:#fffdf6;border:2px dashed #e8e0ff;border-radius:23px;padding:12px;position:relative}.trace-board svg{display:block;width:100%;max-height:390px;touch-action:none;cursor:crosshair}.trace-guide{fill:none;stroke:#d7d0f4;stroke-width:17;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:3 12}.trace-target{fill:none;stroke:#a99af8;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;opacity:.8}.trace-user{fill:none;stroke:#25b88d;stroke-width:10;stroke-linecap:round;stroke-linejoin:round}.trace-info{background:#f7f5ff;border-radius:20px;padding:18px}.big-letter{font-size:75px;font-weight:900;color:var(--purple);line-height:1}.trace-info h3{margin:10px 0 4px}.trace-info p{color:var(--muted);font-size:13px;line-height:1.8}.hint{background:#fff3ce;border-radius:13px;padding:10px;font-size:12px;color:#805c0c;margin:13px 0}.controls{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.secondary{background:#f1efff;color:#6251bb;border-radius:13px;padding:10px 14px;font-weight:800}.success{background:#e1f8f0;color:#128363;border-radius:13px;padding:10px 14px;font-weight:800}.letter-picks{display:flex;gap:9px;flex-wrap:wrap}.letter-pick{width:52px;height:52px;border-radius:15px;background:#f3f0ff;color:#6d59cf;font-size:22px;font-weight:900}.letter-pick.selected{background:var(--purple);color:white}.game-area{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:stretch}.sound-card{background:linear-gradient(135deg,#fff6d8,#fff0f5);border-radius:24px;padding:24px;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:230px}.sound-emoji{font-size:65px}.sound-card h3{margin:5px}.sound-card p{color:var(--muted);margin:0 0 15px}.options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.option{min-height:105px;background:#f5f2ff;border:3px solid transparent;border-radius:20px;font-size:40px;font-weight:900;color:#6f5bd0;transition:.15s}.option:hover{border-color:#c7bcff}.option.correct{background:#dff8ee;border-color:#55cfaa;color:#16845f}.option.wrong{background:#ffe7ed;border-color:#ff9cb4;color:#c34867}.feedback{margin-top:13px;font-weight:800;min-height:28px}.color-layout{display:grid;grid-template-columns:1fr 220px;gap:16px}.paint-wrap{background:#fffdf6;border:2px dashed #e7defc;border-radius:20px;padding:10px}.paint-wrap canvas{width:100%;height:340px;display:block;touch-action:none;border-radius:15px;background:#fff}.palette{display:flex;gap:9px;flex-wrap:wrap;margin:14px 0}.swatch{width:34px;height:34px;border-radius:50%;border:3px solid white;box-shadow:0 0 0 1px #ddd}.swatch.active{box-shadow:0 0 0 3px var(--ink)}.word-stage{display:flex;flex-direction:column;align-items:center;gap:15px;padding:18px;background:#fff8e7;border-radius:22px}.word-tiles{display:flex;gap:10px;direction:ltr}.word-tile{width:70px;height:82px;border-radius:17px;background:white;border:2px dashed #c9bdfb;font-size:39px;color:#8671e5;font-weight:900;display:grid;place-items:center}.word-tile.done{border-style:solid;background:#e0f8ef;color:#178660}.word-options{display:flex;gap:9px;flex-wrap:wrap;justify-content:center}.word-opt{background:#f1edff;border-radius:13px;padding:10px 16px;font-size:20px;font-weight:900;color:#6d59cb}.progress-row{display:flex;align-items:center;gap:12px;margin:12px 0}.progress-track{height:12px;background:#efecfa;border-radius:99px;overflow:hidden;flex:1}.progress-fill{height:100%;background:linear-gradient(90deg,#7f68e8,#ff91b0);border-radius:99px;width:0;transition:width .4s}.footer{text-align:center;color:#8b8da2;font-size:12px;padding:24px 0 12px}.toast{position:fixed;bottom:20px;left:50%;transform:translate(-50%,20px);opacity:0;pointer-events:none;background:#26334b;color:white;padding:12px 20px;border-radius:15px;font-weight:800;box-shadow:0 10px 30px #2223;transition:.25s;z-index:50}.toast.show{opacity:1;transform:translate(-50%,0)}
-@media(max-width:760px){.app{padding:10px}.topbar{padding:10px 12px}.brand{font-size:16px}.brand-icon{width:38px;height:38px}.top-actions .pill{font-size:12px;padding:8px}.hero{padding:22px 18px;grid-template-columns:1fr .5fr}.hero-art{font-size:70px}.hero p{font-size:13px}.activities{grid-template-columns:repeat(2,1fr)}.activity{min-height:130px;padding:14px}.trace-layout,.game-area,.color-layout{grid-template-columns:1fr}.trace-info{order:-1}.content-card{padding:15px}.options{grid-template-columns:repeat(2,1fr)}.paint-wrap canvas{height:290px}.section-head h2{font-size:18px}}
-@media(max-width:390px){.hero-art{display:none}.hero{grid-template-columns:1fr}.top-actions .pill:first-child{display:none}.activity h3{font-size:14px}}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>أبطال الحروف 🌟 | مس أسماء</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Fredoka:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #4f80e1;
+      --primary-light: #eaf1ff;
+      --accent-gold: #ffbe3d;
+      --accent-mint: #38c88f;
+      --accent-pink: #ff6584;
+      --accent-purple: #8f6cf7;
+      --navy: #1f2d47;
+      --text-sub: #63718d;
+      --bg: #f5f8ff;
+      --card-bg: #ffffff;
+      --border-subtle: #e5ebf8;
+      --shadow-sm: 0 4px 12px rgba(31, 45, 71, 0.05);
+      --shadow-md: 0 10px 28px rgba(45, 74, 133, 0.08);
+      --shadow-hover: 0 16px 36px rgba(45, 74, 133, 0.14);
+      --radius-lg: 26px;
+      --radius-md: 18px;
+      --radius-sm: 12px;
+    }
+
+    * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      background-image: 
+        radial-gradient(#dce7ff 1.2px, transparent 1.2px), 
+        radial-gradient(#ffe6ed 1.2px, var(--bg) 1.2px);
+      background-size: 36px 36px;
+      background-position: 0 0, 18px 18px;
+      color: var(--navy);
+      font-family: 'Cairo', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      overflow-x: hidden;
+    }
+
+    button, input, select { font-family: inherit; }
+    button { cursor: pointer; border: 0; transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1); }
+    button:active { transform: scale(0.96); }
+
+    /* Top Navigation */
+    .header-bar {
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(12px);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      border-bottom: 2px solid var(--border-subtle);
+      box-shadow: 0 4px 20px rgba(31, 45, 71, 0.03);
+    }
+    .header-content {
+      max-width: 1180px;
+      margin: auto;
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+    }
+    .brand-wrap {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: inherit;
+    }
+    .brand-logo {
+      width: 48px;
+      height: 48px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, #70a1ff, #ff758c);
+      display: grid;
+      place-items: center;
+      font-size: 26px;
+      box-shadow: 0 6px 16px rgba(112, 161, 255, 0.35);
+      animation: gentle-tilt 4s ease-in-out infinite alternate;
+    }
+    @keyframes gentle-tilt {
+      from { transform: rotate(-4deg); }
+      to { transform: rotate(4deg); }
+    }
+    .brand-title {
+      font-size: 20px;
+      font-weight: 900;
+      color: var(--navy);
+      line-height: 1.2;
+    }
+    .brand-sub {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--accent-pink);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .top-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 10px 20px;
+      border-radius: var(--radius-sm);
+      background: var(--primary);
+      color: white;
+      font-weight: 800;
+      font-size: 14.5px;
+      box-shadow: 0 6px 16px rgba(79, 128, 225, 0.28);
+    }
+    .btn:hover {
+      box-shadow: 0 8px 22px rgba(79, 128, 225, 0.38);
+      transform: translateY(-2px);
+    }
+    .btn-green {
+      background: var(--accent-mint);
+      box-shadow: 0 6px 16px rgba(56, 200, 143, 0.28);
+    }
+    .btn-green:hover {
+      box-shadow: 0 8px 22px rgba(56, 200, 143, 0.38);
+    }
+    .btn-pink {
+      background: var(--accent-pink);
+      box-shadow: 0 6px 16px rgba(255, 101, 132, 0.28);
+    }
+    .btn-soft {
+      background: var(--primary-light);
+      color: var(--primary);
+      box-shadow: none;
+    }
+    .btn-soft:hover {
+      background: #dbe7ff;
+      transform: translateY(-1px);
+    }
+    .btn-light {
+      background: white;
+      color: var(--text-sub);
+      border: 1.5px solid var(--border-subtle);
+      box-shadow: var(--shadow-sm);
+    }
+    .btn-light:hover {
+      border-color: #cbd7f0;
+      color: var(--navy);
+    }
+    .btn-icon {
+      width: 42px;
+      height: 42px;
+      padding: 0;
+      border-radius: 12px;
+      font-size: 18px;
+    }
+
+    /* Main Container */
+    .container {
+      max-width: 1180px;
+      margin: 24px auto 60px;
+      padding: 0 20px;
+    }
+
+    /* Hero Banner */
+    .hero-card {
+      padding: 28px 34px;
+      border-radius: var(--radius-lg);
+      background: linear-gradient(125deg, #eef5ff 0%, #f4efff 50%, #fff1f4 100%);
+      border: 2px solid white;
+      box-shadow: var(--shadow-md);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-card::after {
+      content: '';
+      position: absolute;
+      top: -30%;
+      right: 40%;
+      width: 200px;
+      height: 200px;
+      background: radial-gradient(circle, rgba(255,220,135,0.4) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-info h1 {
+      font-size: clamp(24px, 4vw, 36px);
+      margin: 0 0 8px;
+      font-weight: 900;
+      color: var(--navy);
+    }
+    .hero-info p {
+      margin: 0 0 20px;
+      color: var(--text-sub);
+      font-size: 15px;
+      line-height: 1.7;
+      max-width: 580px;
+    }
+    .hero-badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+    .hero-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255, 255, 255, 0.85);
+      border: 1px solid var(--border-subtle);
+      border-radius: 30px;
+      padding: 6px 14px;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--navy);
+    }
+    .hero-art-side {
+      font-size: 80px;
+      line-height: 1;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      user-select: none;
+      filter: drop-shadow(0 10px 14px rgba(0,0,0,0.06));
+    }
+    .floating-mascot {
+      animation: float-mascot 3.5s ease-in-out infinite alternate;
+    }
+    @keyframes float-mascot {
+      from { transform: translateY(0px) rotate(0deg); }
+      to { transform: translateY(-10px) rotate(3deg); }
+    }
+
+    /* Grid Layout */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 20px;
+      margin-top: 24px;
+    }
+    .card {
+      background: var(--card-bg);
+      border: 1.5px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      box-shadow: var(--shadow-sm);
+      transition: box-shadow 0.25s ease;
+    }
+    .card:hover {
+      box-shadow: var(--shadow-md);
+    }
+    .s-12 { grid-column: span 12; }
+    .s-8  { grid-column: span 8; }
+    .s-6  { grid-column: span 6; }
+    .s-4  { grid-column: span 4; }
+
+    .card-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+    .card-title {
+      font-size: 19px;
+      font-weight: 800;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* Progress bar */
+    .progress-track {
+      height: 14px;
+      border-radius: 50px;
+      background: #ecf1fc;
+      overflow: hidden;
+      position: relative;
+    }
+    .progress-fill {
+      height: 100%;
+      border-radius: 50px;
+      background: linear-gradient(90deg, var(--accent-mint), #56dfaa);
+      transition: width 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+      box-shadow: 0 0 12px rgba(56, 200, 143, 0.4);
+    }
+
+    /* Level Cards */
+    .level-boxes {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 14px;
+    }
+    .level-box {
+      padding: 16px;
+      border-radius: var(--radius-md);
+      background: #f6f9ff;
+      border: 1.5px solid #e7eeff;
+      text-align: center;
+      transition: transform 0.2s;
+    }
+    .level-box.active {
+      background: #edf5ff;
+      border-color: #bcd5ff;
+      box-shadow: 0 4px 14px rgba(79, 128, 225, 0.1);
+    }
+    .level-box.locked {
+      background: #f7f8fa;
+      border-color: #eaebf0;
+      opacity: 0.65;
+    }
+    .level-box b {
+      display: block;
+      margin: 6px 0 3px;
+      font-size: 15px;
+    }
+    .level-box small {
+      font-size: 11.5px;
+      color: var(--text-sub);
+    }
+
+    /* Letters Grid */
+    .letters-shelf {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 14px;
+    }
+    .letter-btn {
+      position: relative;
+      background: white;
+      border: 2px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 16px 8px 12px;
+      text-align: center;
+      color: var(--navy);
+      box-shadow: 0 4px 10px rgba(31, 45, 71, 0.03);
+      cursor: pointer;
+      overflow: hidden;
+    }
+    .letter-btn:hover:not(.locked) {
+      border-color: var(--primary);
+      transform: translateY(-4px);
+      box-shadow: 0 10px 24px rgba(79, 128, 225, 0.16);
+    }
+    .letter-btn .char-display {
+      font-family: 'Fredoka', 'Cairo', sans-serif;
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--primary);
+      line-height: 1.1;
+      display: block;
+    }
+    .letter-btn .status-text {
+      font-size: 11.5px;
+      font-weight: 700;
+      color: var(--text-sub);
+      margin-top: 6px;
+      display: block;
+    }
+    .letter-btn.done {
+      background: #f1fbf6;
+      border-color: #b7e8d2;
+    }
+    .letter-btn.done .char-display {
+      color: var(--accent-mint);
+    }
+    .letter-btn.done .status-text {
+      color: #219665;
+    }
+    .letter-btn.locked {
+      background: #f8f9fb;
+      border-color: #eaecf1;
+      opacity: 0.6;
+      cursor: pointer;
+    }
+    .letter-btn.locked .char-display {
+      color: #9ea8bc;
+    }
+    .letter-btn.current {
+      border-color: var(--accent-gold);
+      background: #fffdf5;
+      animation: pulse-border 2.5s infinite;
+    }
+    @keyframes pulse-border {
+      0%, 100% { border-color: var(--accent-gold); box-shadow: 0 0 0 0 rgba(255, 190, 61, 0.4); }
+      50% { border-color: #ffa800; box-shadow: 0 0 0 6px rgba(255, 190, 61, 0.2); }
+    }
+
+    /* Tasks Row */
+    .task-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      border: 1.5px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 14px 18px;
+      margin-bottom: 12px;
+      background: white;
+      transition: all 0.2s ease;
+    }
+    .task-item:hover {
+      border-color: #cbd8f2;
+      background: #fafcff;
+      transform: translateX(-4px);
+    }
+    .task-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      background: #f0f4ff;
+      display: grid;
+      place-items: center;
+      font-size: 24px;
+      flex-shrink: 0;
+    }
+    .task-info {
+      flex: 1;
+      min-width: 0;
+    }
+    .task-info strong {
+      font-size: 15px;
+      color: var(--navy);
+      display: block;
+      margin-bottom: 2px;
+    }
+    .task-info small {
+      color: var(--text-sub);
+      font-size: 12.5px;
+    }
+    .tag-badge {
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 800;
+      background: #eef6ff;
+      color: var(--primary);
+    }
+    .tag-badge.done {
+      background: #e9faf2;
+      color: #219665;
+    }
+
+    /* Lesson Workspace */
+    .lesson-container {
+      max-width: 880px;
+      margin: 10px auto 30px;
+    }
+    .lesson-card {
+      background: white;
+      border: 2px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      box-shadow: var(--shadow-md);
+      text-align: center;
+    }
+    .nav-tabs {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding: 6px 2px 14px;
+      margin-bottom: 20px;
+      scrollbar-width: none;
+    }
+    .nav-tabs::-webkit-scrollbar { display: none; }
+    .tab-pill {
+      white-space: nowrap;
+      padding: 10px 18px;
+      border-radius: 30px;
+      background: white;
+      border: 1.5px solid var(--border-subtle);
+      color: var(--text-sub);
+      font-weight: 800;
+      font-size: 14px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .tab-pill.active {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: white;
+      box-shadow: 0 4px 14px rgba(79, 128, 225, 0.35);
+    }
+
+    /* Big Character Card */
+    .big-char-card {
+      padding: 24px;
+      border-radius: 24px;
+      background: linear-gradient(135deg, #f0f6ff, #fcf9ff);
+      border: 2px dashed #c9daf8;
+      margin: 16px 0 24px;
+      position: relative;
+    }
+    .big-letter-text {
+      font-family: 'Fredoka', 'Cairo', sans-serif;
+      font-size: clamp(80px, 16vw, 130px);
+      font-weight: 700;
+      color: var(--primary);
+      line-height: 1;
+      margin: 10px 0;
+      text-shadow: 0 8px 18px rgba(79, 128, 225, 0.2);
+    }
+
+    /* Flashcards */
+    .flashcards-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin: 20px 0;
+    }
+    .flashcard {
+      background: white;
+      border: 2px solid var(--border-subtle);
+      border-radius: 20px;
+      padding: 18px 12px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .flashcard:hover {
+      border-color: var(--accent-mint);
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(56, 200, 143, 0.15);
+    }
+    .flashcard-icon {
+      font-size: 48px;
+      margin-bottom: 8px;
+      display: inline-block;
+      transition: transform 0.2s;
+    }
+    .flashcard:hover .flashcard-icon {
+      transform: scale(1.15);
+    }
+    .flashcard-en {
+      font-family: 'Fredoka', sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 2px;
+    }
+    .flashcard-ar {
+      font-size: 13.5px;
+      font-weight: 700;
+      color: var(--text-sub);
+    }
+    .flashcard-audio-hint {
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      font-size: 12px;
+      background: #f0f4ff;
+      border-radius: 50%;
+      width: 24px;
+      height: 24px;
+      display: grid;
+      place-items: center;
+      color: var(--primary);
+    }
+
+    /* Tracing Pad */
+    .trace-wrapper {
+      position: relative;
+      width: 100%;
+      max-width: 520px;
+      height: 270px;
+      margin: 20px auto;
+      border-radius: 24px;
+      background: #fafcff;
+      border: 3px dashed #b9d0fa;
+      overflow: hidden;
+      touch-action: none;
+      box-shadow: inset 0 2px 10px rgba(79, 128, 225, 0.05);
+    }
+    .trace-guide-char {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      font-family: 'Fredoka', sans-serif;
+      font-size: 180px;
+      font-weight: 700;
+      color: #e2ecff;
+      user-select: none;
+      pointer-events: none;
+      line-height: 1;
+    }
+    .trace-dot-start {
+      position: absolute;
+      top: 36px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: var(--accent-mint);
+      border: 3px solid white;
+      box-shadow: 0 0 0 4px rgba(56, 200, 143, 0.4);
+      animation: pulse-dot 1.8s infinite;
+      z-index: 2;
+      pointer-events: none;
+    }
+    @keyframes pulse-dot {
+      0%, 100% { transform: translateX(-50%) scale(1); }
+      50% { transform: translateX(-50%) scale(1.25); }
+    }
+    .trace-canvas {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      touch-action: none;
+      z-index: 3;
+    }
+
+    /* Multiple Choices */
+    .quiz-options {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin: 24px 0;
+    }
+    .quiz-btn {
+      width: 95px;
+      height: 95px;
+      border-radius: 24px;
+      background: white;
+      border: 3px solid var(--border-subtle);
+      font-family: 'Fredoka', 'Cairo', sans-serif;
+      font-size: 42px;
+      font-weight: 700;
+      color: var(--primary);
+      box-shadow: 0 6px 16px rgba(31, 45, 71, 0.06);
+    }
+    .quiz-btn:hover {
+      border-color: var(--accent-mint);
+      background: #f1fbf6;
+      transform: scale(1.08);
+    }
+
+    /* Word Builder Game */
+    .word-slot-box {
+      font-family: 'Fredoka', sans-serif;
+      font-size: 52px;
+      font-weight: 700;
+      letter-spacing: 8px;
+      color: var(--navy);
+      background: #f6f9ff;
+      border: 2px solid #dae5f8;
+      border-radius: 20px;
+      padding: 16px 28px;
+      display: inline-block;
+      margin: 18px 0;
+    }
+    .word-slot-blank {
+      color: var(--accent-pink);
+      border-bottom: 4px solid var(--accent-pink);
+      padding: 0 6px;
+    }
+
+    /* Coloring Pad */
+    .palette-row {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin: 14px 0;
+      flex-wrap: wrap;
+    }
+    .palette-dot {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: 3px solid white;
+      box-shadow: 0 0 0 2px #d2dbec;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    .palette-dot:hover, .palette-dot.active {
+      transform: scale(1.22);
+      box-shadow: 0 0 0 3px var(--primary);
+    }
+    .stamp-row {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin: 10px 0 16px;
+    }
+    .stamp-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      background: #f0f4ff;
+      border: 1.5px solid #dce5f8;
+      font-size: 20px;
+      display: grid;
+      place-items: center;
+    }
+    .stamp-btn.active {
+      border-color: var(--accent-pink);
+      background: #fff0f3;
+      transform: scale(1.15);
+    }
+
+    /* Teacher Dashboard Styles */
+    .teacher-stat-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin-bottom: 22px;
+    }
+    .teacher-stat-card {
+      background: #f7faff;
+      border: 1.5px solid #e2edff;
+      border-radius: var(--radius-md);
+      padding: 18px 14px;
+      text-align: center;
+    }
+    .teacher-stat-card .val {
+      font-size: 30px;
+      font-weight: 900;
+      color: var(--navy);
+      display: block;
+      margin-top: 4px;
+    }
+    .teacher-stat-card .lbl {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--text-sub);
+    }
+
+    .kid-row-card {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 14px 18px;
+      border-radius: var(--radius-md);
+      background: white;
+      border: 1.5px solid var(--border-subtle);
+      margin-bottom: 12px;
+    }
+    .kid-avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 16px;
+      background: #ffebe3;
+      display: grid;
+      place-items: center;
+      font-size: 26px;
+      flex-shrink: 0;
+    }
+
+    /* Custom Kid-Friendly Alert Modal (Replaces browser alert) */
+    .kid-modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(23, 33, 53, 0.6);
+      backdrop-filter: blur(8px);
+      display: grid;
+      place-items: center;
+      padding: 18px;
+      z-index: 1000;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s ease;
+    }
+    .kid-modal-overlay.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .kid-modal-card {
+      background: white;
+      border-radius: 32px;
+      padding: 32px 28px 26px;
+      width: min(440px, 100%);
+      text-align: center;
+      position: relative;
+      box-shadow: 0 25px 60px rgba(23, 33, 53, 0.25);
+      border: 3px solid white;
+      transform: scale(0.88);
+      transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    .kid-modal-overlay.active .kid-modal-card {
+      transform: scale(1);
+    }
+    .kid-modal-mascot {
+      width: 90px;
+      height: 90px;
+      margin: -75px auto 14px;
+      border-radius: 28px;
+      background: linear-gradient(135deg, #ffeaa7, #fab1a0);
+      display: grid;
+      place-items: center;
+      font-size: 48px;
+      box-shadow: 0 12px 28px rgba(250, 177, 160, 0.45);
+      border: 4px solid white;
+      animation: pop-bounce 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    @keyframes pop-bounce {
+      0% { transform: scale(0.3) rotate(-15deg); }
+      70% { transform: scale(1.15) rotate(5deg); }
+      100% { transform: scale(1) rotate(0deg); }
+    }
+    .kid-modal-title {
+      font-size: 22px;
+      font-weight: 900;
+      margin: 0 0 8px;
+      color: var(--navy);
+    }
+    .kid-modal-desc {
+      font-size: 15px;
+      color: var(--text-sub);
+      line-height: 1.6;
+      margin: 0 0 22px;
+    }
+    .kid-modal-actions {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+    }
+
+    /* Toast Notification */
+    .toast-pill {
+      position: fixed;
+      top: 24px;
+      left: 50%;
+      transform: translateX(-50%) translateY(-100px);
+      background: white;
+      border: 2px solid var(--border-subtle);
+      border-radius: 50px;
+      padding: 12px 24px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      box-shadow: 0 12px 30px rgba(31, 45, 71, 0.14);
+      z-index: 2000;
+      transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+      font-weight: 800;
+      font-size: 14.5px;
+    }
+    .toast-pill.show {
+      transform: translateX(-50%) translateY(0);
+    }
+
+    /* Confetti Canvas */
+    #confetti-canvas {
+      position: fixed;
+      inset: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 999;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 24px 16px 30px;
+      color: #8c97aa;
+      font-size: 13px;
+      line-height: 1.6;
+      border-top: 1px solid var(--border-subtle);
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(8px);
+      margin-top: 45px;
+    }
+    .footer-inner {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .footer-msg {
+      margin: 0 0 6px;
+      font-weight: 600;
+      color: #63718d;
+    }
+    .footer-msg strong {
+      color: var(--navy);
+    }
+    .footer-sub {
+      margin-top: 4px;
+    }
+    .powered-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 3px 12px;
+      background: #edf2fc;
+      border-radius: 20px;
+      font-size: 11.5px;
+      color: #72819d;
+      font-family: 'Fredoka', 'Cairo', sans-serif;
+    }
+    .powered-tag b {
+      color: var(--primary);
+      font-weight: 800;
+      letter-spacing: 0.5px;
+    }
+
+    /* Forms */
+    .form-group {
+      text-align: right;
+      margin-bottom: 14px;
+    }
+    .form-group label {
+      display: block;
+      font-size: 13px;
+      font-weight: 800;
+      color: var(--navy);
+      margin-bottom: 6px;
+    }
+    .form-control {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1.5px solid var(--border-subtle);
+      border-radius: 12px;
+      font-size: 14.5px;
+      color: var(--navy);
+      background: #fafcff;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .form-control:focus {
+      border-color: var(--primary);
+      background: white;
+    }
+
+    /* Responsive */
+    @media (max-width: 860px) {
+      .s-8, .s-6, .s-4 { grid-column: span 12; }
+      .letters-shelf { grid-template-columns: repeat(4, 1fr); }
+      .teacher-stat-grid { grid-template-columns: repeat(2, 1fr); }
+      .flashcards-row { grid-template-columns: 1fr; }
+      .level-boxes { grid-template-columns: 1fr; }
+      .hero-card { flex-direction: column; text-align: center; padding: 24px 20px; }
+      .hero-info p { margin: auto auto 18px; }
+      .hero-badge-row { justify-content: center; }
+      .hero-art-side { font-size: 60px; }
+      .header-content { padding: 10px 14px; }
+      .brand-title { font-size: 17px; }
+      .brand-logo { width: 40px; height: 40px; font-size: 22px; }
+      .btn { padding: 8px 14px; font-size: 13.5px; }
+    }
+  </style>
 </head>
 <body>
-<div class="app">
-<header class="topbar"><div class="brand"><div class="brand-icon">🦊</div><div>Little Steps<small>نتعلّم ونلعب كل يوم!</small></div></div><div class="top-actions"><div class="pill">🌟 <span id="stars">0</span> نجوم</div><div class="pill star-pill">المستوى <span id="levelNo">1</span>/5</div></div></header>
-<section class="hero" id="hero"><div><span class="eyebrow">✨ مغامرة التعلّم بدأت!</span><h1>كل حرف حكاية،<br>وكل محاولة نجاح 💜</h1><p>اتعلّم الحروف، اسمع أصواتها، لوّن وارسم، واجمع النجوم في طريقك!</p><button class="primary" onclick="openView('trace')">يلا نبدأ! 🚀</button></div><div class="hero-art" aria-hidden="true">🦊📚</div></section>
-<div class="section-head"><h2>هنلعب إيه النهارده؟ 🎈</h2><span>اختار نشاطك</span></div>
-<section class="activities">
-<button class="activity" onclick="openView('trace')"><div class="emoji">✍️</div><h3>اكتب الحرف</h3><p>اتبع الخط خطوة بخطوة</p></button>
-<button class="activity" onclick="openView('sounds')"><div class="emoji">🔊</div><h3>اسمع واختار</h3><p>اسمع الصوت واختار الحرف</p></button>
-<button class="activity" onclick="openView('color')"><div class="emoji">🎨</div><h3>وقت التلوين</h3><p>لوّن رسمة بطريقتك</p></button>
-<button class="activity" onclick="openView('words')"><div class="emoji">🧩</div><h3>كوّن كلمة</h3><p>رتّب الحروف واعرف الكلمة</p></button>
-</section>
-<section class="content-card view active" id="view-trace">
- <div class="lesson-head"><div><h2>✍️ مغامرة كتابة الحروف</h2><div style="color:var(--muted);font-size:13px">ابدأ من النقطة الخضراء واتبع الطريق المنقّط.</div></div><button class="back-btn" onclick="resetTrace()">↻ ابدأ من جديد</button></div>
- <div class="trace-layout"><div class="trace-board"><svg id="traceSvg" viewBox="0 0 320 280" role="img" aria-label="مسار تتبع الحرف"><path id="guide1" class="trace-guide" d="M 75 230 L 160 45 L 245 230 M 112 155 L 208 155"/><path id="target1" class="trace-target" d="M 75 230 L 160 45 L 245 230 M 112 155 L 208 155"/><path id="userPath" class="trace-user" d=""/><circle id="startDot" cx="75" cy="230" r="12" fill="#24b58b" stroke="white" stroke-width="4"/><text id="startNum" x="75" y="234" text-anchor="middle" font-size="12" font-weight="900" fill="white">1</text></svg><div class="progress-row"><strong style="font-size:12px">تقدّمك</strong><div class="progress-track"><div class="progress-fill" id="traceProgress"></div></div><strong id="tracePct" style="font-size:12px">0%</strong></div></div>
- <aside class="trace-info"><div class="big-letter" id="traceLetter">A</div><h3 id="traceTitle">حرف A</h3><p id="traceDesc">ابدأ من النقطة الخضراء، وامشِ على الخط المنقّط. لو خرجت عن المسار، جرّب تاني!</p><button class="primary" onclick="speakCurrent()">🔊 اسمع صوت الحرف</button><div class="hint">💡 تلميحة: امسك إصبعك على الشاشة واتبّع الخط ببطء.</div><div class="letter-picks"><button class="letter-pick selected" data-letter="A" onclick="chooseTrace('A')">A</button><button class="letter-pick" data-letter="B" onclick="chooseTrace('B')">B</button><button class="letter-pick" data-letter="C" onclick="chooseTrace('C')">C</button></div><div class="controls"><button class="secondary" onclick="resetTrace()">إعادة المحاولة</button><button class="success" onclick="showToast('أحسنت! في النسخة التجريبية تقدر تستكشف باقي الأنشطة 🌟')">مساعدة 💡</button></div></aside></div>
-</section>
-<section class="content-card view" id="view-sounds"><div class="lesson-head"><div><h2>🔊 اسمع واختار</h2><div style="color:var(--muted);font-size:13px">اضغط على السماعة، وبعدها اختار الحرف اللي سمعت صوته.</div></div><button class="back-btn" onclick="newSoundQuestion()">سؤال جديد ↻</button></div><div class="game-area"><div class="sound-card"><div class="sound-emoji" id="soundEmoji">🐝</div><h3>إيه الحرف اللي سمعت صوته؟</h3><p>اسمع تاني لو محتاج 👂</p><button class="primary" onclick="playQuestionSound()">🔊 شغّل الصوت</button></div><div><div class="options" id="soundOptions"></div><div class="feedback" id="soundFeedback" aria-live="polite"></div><div class="hint">⭐ كل إجابة صحيحة بتكسبك نجمة!</div></div></div></section>
-<section class="content-card view" id="view-color"><div class="lesson-head"><div><h2>🎨 استوديو الألوان</h2><div style="color:var(--muted);font-size:13px">اختار لون وارسم أو لوّن رسمة الفراشة.</div></div><button class="back-btn" onclick="clearPaint()">مسح الرسمة ↻</button></div><div class="color-layout"><div class="paint-wrap"><canvas id="paintCanvas" width="700" height="380" aria-label="لوحة رسم وتلوين"></canvas></div><aside><h3 style="margin-top:4px">اختار لونك المفضل 🌈</h3><div class="palette" id="palette"></div><div class="hint">🖌️ اسحب بإصبعك أو بالماوس عشان ترسم. جرّب ألوان مختلفة!</div><button class="primary" onclick="clearPaint()">ابدأ رسمة جديدة</button></aside></div></section>
-<section class="content-card view" id="view-words"><div class="lesson-head"><div><h2>🧩 كوّن الكلمة</h2><div style="color:var(--muted);font-size:13px">اختار الحروف بالترتيب عشان تكوّن كلمة CAT.</div></div><button class="back-btn" onclick="resetWord()">إعادة ↻</button></div><div class="word-stage"><div style="font-size:58px">🐱</div><div style="font-weight:900">القطة اسمها بالإنجليزي CAT</div><div class="word-tiles" id="wordTiles"><div class="word-tile"></div><div class="word-tile"></div><div class="word-tile"></div></div><div class="word-options" id="wordOptions"></div><div class="feedback" id="wordFeedback"></div><button class="secondary" onclick="speak('cat')">🔊 اسمع كلمة CAT</button></div></section>
-<div class="section-head"><h2>🏆 رحلتك التعليمية</h2><span>كل خطوة بتفرق!</span></div><section class="content-card" style="padding:18px 22px"><div style="display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap"><strong>تقدّمك في المغامرة</strong><span id="progressLabel" style="color:var(--muted);font-size:13px">لسه بنبدأ — يلا بينا!</span></div><div class="progress-row"><div class="progress-track"><div class="progress-fill" id="overallProgress"></div></div><strong id="overallPct">0%</strong></div><div style="display:flex;gap:8px;flex-wrap:wrap"><span class="pill">✍️ الكتابة</span><span class="pill">🔊 الأصوات</span><span class="pill">🎨 التلوين</span><span class="pill">🧩 الكلمات</span></div></section>
-<footer class="footer">صُمّم بحب للعقول الصغيرة 💜 · نسخة تجريبية قابلة للتجربة</footer>
-</div><div class="toast" id="toast" role="status"></div>
-<script>
-const $=s=>document.querySelector(s); let stars=0,completed={trace:false,sounds:false,color:false,words:false};
-const letters={A:{name:'A',sound:'a',word:'Apple',emoji:'🍎',paths:[[[75,230],[95,186],[118,137],[139,91],[160,45]],[[160,45],[180,91],[202,137],[225,186],[245,230]],[[112,155],[136,155],[160,155],[184,155],[208,155]]]},B:{name:'B',sound:'b',word:'Bear',emoji:'🐻',paths:[[[95,230],[95,183],[95,137],[95,91],[95,45]],[[95,45],[135,45],[171,51],[185,78],[174,105],[145,137],[95,137]],[[95,137],[146,137],[188,146],[202,175],[188,207],[153,230],[95,230]]]},C:{name:'C',sound:'k',word:'Cat',emoji:'🐱',paths:[[[228,75],[205,52],[174,43],[140,47],[111,65],[92,93],[85,125],[90,160],[107,190],[135,214],[169,224],[200,216],[224,196]]]}};
-let currentTrace='A',activeStroke=0,traceDrawing=false,tracePoints=[],traceProgress=0,traceDone=false;
-function showToast(msg){let t=$('#toast');t.textContent=msg;t.classList.add('show');clearTimeout(window.toastTimer);window.toastTimer=setTimeout(()=>t.classList.remove('show'),2300)}
-function openView(name){document.querySelectorAll('.view').forEach(v=>v.classList.remove('active'));$('#view-'+name).classList.add('active');document.querySelectorAll('.activity').forEach(b=>b.style.borderColor='transparent');if(name==='sounds'&&!soundQuestionReady)newSoundQuestion();if(name==='color')setupPaint();if(name==='words')renderWord();$('#view-'+name).scrollIntoView({behavior:'smooth',block:'start'})}
-function speak(text){if(!('speechSynthesis'in window)){showToast('تشغيل الصوت غير مدعوم في المتصفح ده');return}speechSynthesis.cancel();let u=new SpeechSynthesisUtterance(text);u.lang='en-US';u.rate=.78;u.pitch=1.12;speechSynthesis.speak(u)}
-function speakCurrent(){let x=letters[currentTrace];speak(x.name==='A'?'A, apple':x.name==='B'?'B, bear':'C, cat')}
-function chooseTrace(letter){currentTrace=letter;activeStroke=0;traceDrawing=false;tracePoints=[];traceProgress=0;traceDone=false;const x=letters[letter];$('#traceLetter').textContent=letter;$('#traceTitle').textContent='حرف '+letter;$('#traceDesc').textContent='ابدأ من النقطة الخضراء، وامشِ على الخط المنقّط. لو خرجت عن المسار، جرّب تاني!';$('#guide1').setAttribute('d',x.paths.map(p=>'M '+p.map(q=>q.join(' ')).join(' L ')).join(' '));$('#target1').setAttribute('d',x.paths.map(p=>'M '+p.map(q=>q.join(' ')).join(' L ')).join(' '));$('#userPath').setAttribute('d','');$('#startDot').setAttribute('cx',x.paths[0][0][0]);$('#startDot').setAttribute('cy',x.paths[0][0][1]);$('#startNum').setAttribute('x',x.paths[0][0][0]);$('#startNum').setAttribute('y',x.paths[0][0][1]+4);document.querySelectorAll('.letter-pick').forEach(b=>b.classList.toggle('selected',b.dataset.letter===letter));updateTraceProgress();}
-function resetTrace(){chooseTrace(currentTrace)}
-const svg=$('#traceSvg');function svgPoint(e){let r=svg.getBoundingClientRect();return [(e.clientX-r.left)*320/r.width,(e.clientY-r.top)*280/r.height]}
-function dist(a,b){return Math.hypot(a[0]-b[0],a[1]-b[1])}
-function nearestDistance(p,a,b){let dx=b[0]-a[0],dy=b[1]-a[1],l=dx*dx+dy*dy;if(!l)return dist(p,a);let t=Math.max(0,Math.min(1,((p[0]-a[0])*dx+(p[1]-a[1])*dy)/l));return dist(p,[a[0]+t*dx,a[1]+t*dy])}
-function strokeLen(path){let l=0;for(let i=1;i<path.length;i++)l+=dist(path[i-1],path[i]);return l}
-function traceDown(e){if(traceDone)return;const p=svgPoint(e),path=letters[currentTrace].paths[activeStroke];if(!path)return;if(dist(p,path[0])>40){showToast('ابدأ من النقطة الخضراء 🟢');return}traceDrawing=true;tracePoints=[p];svg.setPointerCapture(e.pointerId);$('#startDot').setAttribute('fill','#ffb83e');$('#startNum').textContent='';drawUserPath()}
-function traceMove(e){if(!traceDrawing)return;const p=svgPoint(e),path=letters[currentTrace].paths[activeStroke];const idx=Math.min(path.length-1,Math.floor(tracePoints.length/4)+1);const d=nearestDistance(p,path[Math.max(0,idx-1)],path[idx]);if(d>35){showToast('قرب من الخط المنقّط شوية 😊');return}tracePoints.push(p);drawUserPath();let total=letters[currentTrace].paths.reduce((a,s)=>a+strokeLen(s),0);let done=letters[currentTrace].paths.slice(0,activeStroke).reduce((a,s)=>a+strokeLen(s),0);let part=0;for(let i=1;i<tracePoints.length;i++)part+=dist(tracePoints[i-1],tracePoints[i]);traceProgress=Math.min(95,Math.round((done+Math.min(part,strokeLen(path)))/total*100));updateTraceProgress();if(dist(p,path[path.length-1])<29){traceDrawing=false;activeStroke++;if(activeStroke>=letters[currentTrace].paths.length){traceDone=true;traceProgress=100;updateTraceProgress();completed.trace=true;addStar('trace');$('#traceDesc').textContent='يا سلام! كتبت الحرف '+currentTrace+' بنجاح. أنت بطل! 🎉';showToast('برافو عليك! كسبت نجمة ⭐');speak('Great job!');}else{tracePoints=[];$('#startDot').setAttribute('cx',letters[currentTrace].paths[activeStroke][0][0]);$('#startDot').setAttribute('cy',letters[currentTrace].paths[activeStroke][0][1]);$('#startNum').setAttribute('x',letters[currentTrace].paths[activeStroke][0][0]);$('#startNum').setAttribute('y',letters[currentTrace].paths[activeStroke][0][1]+4);$('#startNum').textContent=activeStroke+1;$('#startDot').setAttribute('fill','#24b58b');showToast('ممتاز! كمل الخطوة رقم '+(activeStroke+1));}}}
-function traceUp(){traceDrawing=false;$('#startDot').setAttribute('fill','#24b58b')}
-function drawUserPath(){let d=tracePoints.map((p,i)=>(i?'L ':'M ')+p[0].toFixed(1)+' '+p[1].toFixed(1)).join(' ');$('#userPath').setAttribute('d',d)}
-function updateTraceProgress(){$('#traceProgress').style.width=traceProgress+'%';$('#tracePct').textContent=traceProgress+'%'}
-svg.addEventListener('pointerdown',traceDown);svg.addEventListener('pointermove',traceMove);svg.addEventListener('pointerup',traceUp);svg.addEventListener('pointercancel',traceUp);
-function addStar(activity){if(completed[activity]&&activity!=='trace')return;stars++;$('#stars').textContent=stars;completed[activity]=true;updateOverall()}
-const soundItems=[{letter:'A',word:'Apple',emoji:'🍎',sound:'a'},{letter:'B',word:'Bear',emoji:'🐻',sound:'b'},{letter:'C',word:'Cat',emoji:'🐱',sound:'k'},{letter:'D',word:'Dog',emoji:'🐶',sound:'d'}];let soundQuestion,soundQuestionReady=false,soundSolved=false;
-function newSoundQuestion(){soundQuestion=soundItems[Math.floor(Math.random()*soundItems.length)];soundSolved=false;soundQuestionReady=true;$('#soundEmoji').textContent=soundQuestion.emoji;$('#soundFeedback').textContent='';let opts=[soundQuestion.letter];while(opts.length<4){let l=soundItems[Math.floor(Math.random()*soundItems.length)].letter;if(!opts.includes(l))opts.push(l)}opts.sort(()=>Math.random()-.5);$('#soundOptions').innerHTML=opts.map(l=>`<button class="option" onclick="answerSound('${l}',this)">${l}</button>`).join('');setTimeout(playQuestionSound,300)}
-function playQuestionSound(){if(soundQuestion)speak(soundQuestion.word)}
-function answerSound(letter,el){if(soundSolved)return;if(letter===soundQuestion.letter){el.classList.add('correct');$('#soundFeedback').textContent='إجابة صحيحة! شاطر يا بطل! 🎉';$('#soundFeedback').style.color='#16845f';soundSolved=true;if(!completed.sounds)addStar('sounds');speak('Excellent! '+soundQuestion.word);setTimeout(newSoundQuestion,1800)}else{el.classList.add('wrong');$('#soundFeedback').textContent='قريب جدًا! اسمع تاني وجرب 😊';$('#soundFeedback').style.color='#c34867';speak('Try again')}}
-const colors=['#ff668b','#ffb83e','#64cbb0','#6d8df2','#a68af5','#3e475b','#ff8e55','#70c9ef','#ffffff'];let paintColor=colors[0],paintCtx,paintReady=false,painting=false;
-function setupPaint(){let c=$('#paintCanvas');if(paintReady)return;paintReady=true;paintCtx=c.getContext('2d');paintCtx.lineCap='round';paintCtx.lineJoin='round';paintCtx.lineWidth=12;drawButterfly();$('#palette').innerHTML=colors.map((c,i)=>`<button class="swatch ${i===0?'active':''}" style="background:${c}" aria-label="اختيار لون" onclick="pickColor('${c}',this)"></button>`).join('');c.addEventListener('pointerdown',paintDown);c.addEventListener('pointermove',paintMove);c.addEventListener('pointerup',()=>painting=false);c.addEventListener('pointercancel',()=>painting=false)}
-function drawButterfly(){let c=$('#paintCanvas');paintCtx.clearRect(0,0,c.width,c.height);paintCtx.fillStyle='#fff';paintCtx.fillRect(0,0,c.width,c.height);paintCtx.lineWidth=5;paintCtx.strokeStyle='#4b4666';paintCtx.fillStyle='#fff3cd';paintCtx.beginPath();paintCtx.ellipse(275,155,90,80,-.55,0,Math.PI*2);paintCtx.fill();paintCtx.stroke();paintCtx.beginPath();paintCtx.ellipse(425,155,90,80,.55,0,Math.PI*2);paintCtx.fill();paintCtx.stroke();paintCtx.beginPath();paintCtx.ellipse(285,245,50,36,-.55,0,Math.PI*2);paintCtx.fill();paintCtx.stroke();paintCtx.beginPath();paintCtx.ellipse(415,245,50,36,.55,0,Math.PI*2);paintCtx.fill();paintCtx.stroke();paintCtx.beginPath();paintCtx.ellipse(350,190,18,65,0,0,Math.PI*2);paintCtx.fillStyle='#d9d1ff';paintCtx.fill();paintCtx.stroke();paintCtx.beginPath();paintCtx.moveTo(342,127);paintCtx.quadraticCurveTo(310,75,294,95);paintCtx.moveTo(358,127);paintCtx.quadraticCurveTo(390,75,406,95);paintCtx.stroke();paintCtx.font='bold 22px Cairo';paintCtx.fillStyle='#8a7bd3';paintCtx.textAlign='center';paintCtx.fillText('لوّن الفراشة! 🦋',350,340)}
-function pickColor(c,el){paintColor=c;document.querySelectorAll('.swatch').forEach(s=>s.classList.remove('active'));el.classList.add('active')}
-function paintPoint(e){let r=e.target.getBoundingClientRect();return [(e.clientX-r.left)*e.target.width/r.width,(e.clientY-r.top)*e.target.height/r.height]}
-function paintDown(e){painting=true;e.target.setPointerCapture(e.pointerId);let p=paintPoint(e);paintCtx.beginPath();paintCtx.moveTo(...p);paintCtx.strokeStyle=paintColor;paintCtx.lineWidth=15}
-function paintMove(e){if(!painting)return;let p=paintPoint(e);paintCtx.lineTo(...p);paintCtx.stroke()}
-function clearPaint(){if(!paintReady)setupPaint();drawButterfly();showToast('لوحتك جاهزة من جديد! 🎨')}
-// Give the first meaningful use of the coloring activity a star.
-$('#paintCanvas').addEventListener('pointerup',()=>{if(!completed.color){completed.color=true;stars++;$('#stars').textContent=stars;updateOverall();showToast('رسمة جميلة! كسبت نجمة ⭐')}},{once:true});
-let wordProgress=0;function renderWord(){let tiles=[...document.querySelectorAll('.word-tile')];tiles.forEach((t,i)=>{t.textContent='CAT'[i]&&i<wordProgress?'CAT'[i]:'';t.classList.toggle('done',i<wordProgress)});let pool=['C','A','T','B','O','S'].sort(()=>Math.random()-.5);$('#wordOptions').innerHTML=pool.map(l=>`<button class="word-opt" onclick="chooseWord('${l}')">${l}</button>`).join('')}
-function chooseWord(l){if(wordProgress>=3)return;if(l==='CAT'[wordProgress]){wordProgress++;renderWord();$('#wordFeedback').textContent=wordProgress===3?'أحسنت! كوّنت كلمة CAT 🎉':'صح! اختار الحرف اللي بعده.';$('#wordFeedback').style.color='#16845f';if(wordProgress===3){if(!completed.words)addStar('words');speak('Cat');showToast('ممتاز! كلمة كاملة ونجمة جديدة 🌟')}}else{$('#wordFeedback').textContent='مش مشكلة، جرّب حرف تاني 😊';$('#wordFeedback').style.color='#c34867';speak('Try again')}}
-function resetWord(){wordProgress=0;$('#wordFeedback').textContent='';renderWord()}
-function updateOverall(){let count=Object.values(completed).filter(Boolean).length;let pct=Math.round(count/4*100);$('#overallProgress').style.width=pct+'%';$('#overallPct').textContent=pct+'%';$('#progressLabel').textContent=count===0?'لسه بنبدأ — يلا بينا!':count===4?'بطل! جرّبت كل الأنشطة 🎉':`خلصت ${count} من 4 أنشطة`;$('#levelNo').textContent=count>=4?2:count>=2?2:1}
-newSoundQuestion();chooseTrace('A');renderWord();
-</script>
-</body></html>
+
+  <!-- Confetti Layer -->
+  <canvas id="confetti-canvas"></canvas>
+
+  <!-- Top Floating Toast Notification -->
+  <div id="toast" class="toast-pill">
+    <span id="toast-icon">✨</span>
+    <span id="toast-msg">أهلاً بك يا بطل!</span>
+  </div>
+
+  <!-- Interactive Kid-Friendly Alert Modal -->
+  <div id="kidAlertModal" class="kid-modal-overlay">
+    <div class="kid-modal-card">
+      <div id="alertMascot" class="kid-modal-mascot">🌟</div>
+      <h3 id="alertTitle" class="kid-modal-title">رائع جداً!</h3>
+      <p id="alertDesc" class="kid-modal-desc">أنت شاطر وممتاز جداً!</p>
+      <div id="alertActions" class="kid-modal-actions">
+        <button class="btn btn-green" id="alertConfirmBtn" onclick="closeAlert()">يلا نكمّل! 🚀</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Generic Teacher / Form Modal -->
+  <div id="appModal" class="kid-modal-overlay">
+    <div class="kid-modal-card" style="text-align: right; max-height: 90vh; overflow-y: auto;">
+      <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px;">
+        <h3 id="appModalTitle" style="margin: 0; font-size: 20px; font-weight: 900;">عنوان النافذة</h3>
+        <button class="btn-light btn-icon" onclick="closeAppModal()" title="إغلاق">✕</button>
+      </div>
+      <div id="appModalBody"></div>
+    </div>
+  </div>
+
+  <!-- Main Header -->
+  <header class="header-bar">
+    <div class="header-content">
+      <div class="brand-wrap">
+        <div class="brand-logo">🌈</div>
+        <div>
+          <div class="brand-title">أبطال الحروف</div>
+          <div class="brand-sub">مع مس أسماء 🌸</div>
+        </div>
+      </div>
+
+      <div class="top-actions">
+        <!-- Switch Student or View Mode -->
+        <div id="kidSelectorWrap" style="display: flex; align-items: center; gap: 6px;"></div>
+        <button class="btn btn-soft" id="roleSwitchBtn" onclick="toggleRole()">
+          👩‍🏫 لوحة مس أسماء
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content App Mount -->
+  <main class="container" id="appMount"></main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-inner">
+      <p class="footer-msg">منصة <strong>أبطال الحروف</strong> مع مس أسماء 🌸 • خطوة بخطوة نحو التميز</p>
+      <div class="footer-sub">
+        <span class="powered-tag"><b>3zb</b> powered by </span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    /* ==========================================================================
+       1. DATA & STATE MANAGEMENT (Local Storage persistence)
+       ========================================================================== */
+    const STORAGE_KEY = 'KIDS_HEROES_ASMAA_DATA_v2';
+
+    // Rich Letter Content Database (Phonics, Words, Icons, Translations)
+    const LETTER_DATA = {
+      A: {
+        char: 'A',
+        phonics: '/æ/ صوت "آه" الخفيف',
+        words: [
+          { en: 'Apple', ar: 'تفاحة', icon: '🍎' },
+          { en: 'Ant', ar: 'نملة', icon: '🐜' },
+          { en: 'Airplane', ar: 'طائرة', icon: '✈️' }
+        ],
+        quizWord: { word: 'APPLE', missing: 'A', display: '_PPLE', icon: '🍎', choices: ['A', 'B', 'C'] }
+      },
+      B: {
+        char: 'B',
+        phonics: '/b/ صوت "بـ" الشفتين',
+        words: [
+          { en: 'Bear', ar: 'دب', icon: '🐻' },
+          { en: 'Ball', ar: 'كرة', icon: '⚽' },
+          { en: 'Butterfly', ar: 'فراشة', icon: '🦋' }
+        ],
+        quizWord: { word: 'BEAR', missing: 'B', display: '_EAR', icon: '🐻', choices: ['B', 'D', 'P'] }
+      },
+      C: {
+        char: 'C',
+        phonics: '/k/ صوت "كـ" القوي',
+        words: [
+          { en: 'Cat', ar: 'قطة', icon: '🐱' },
+          { en: 'Car', ar: 'سيارة', icon: '🚗' },
+          { en: 'Cake', ar: 'كيكة', icon: '🎂' }
+        ],
+        quizWord: { word: 'CAT', missing: 'C', display: '_AT', icon: '🐱', choices: ['C', 'K', 'O'] }
+      },
+      D: {
+        char: 'D',
+        phonics: '/d/ صوت "د" بطرف اللسان',
+        words: [
+          { en: 'Dog', ar: 'كلب', icon: '🐶' },
+          { en: 'Duck', ar: 'بطة', icon: '🦆' },
+          { en: 'Door', ar: 'باب', icon: '🚪' }
+        ],
+        quizWord: { word: 'DOG', missing: 'D', display: '_OG', icon: '🐶', choices: ['D', 'B', 'T'] }
+      },
+      E: {
+        char: 'E',
+        phonics: '/e/ صوت "إيه" المفتوح',
+        words: [
+          { en: 'Elephant', ar: 'فيل', icon: '🐘' },
+          { en: 'Egg', ar: 'بيضة', icon: '🥚' },
+          { en: 'Eye', ar: 'عين', icon: '👁️' }
+        ],
+        quizWord: { word: 'EGG', missing: 'E', display: '_GG', icon: '🥚', choices: ['E', 'I', 'A'] }
+      },
+      F: {
+        char: 'F',
+        phonics: '/f/ صوت "فـ" الهوائي',
+        words: [
+          { en: 'Fish', ar: 'سمكة', icon: '🐟' },
+          { en: 'Frog', ar: 'ضفدع', icon: '🐸' },
+          { en: 'Flower', ar: 'وردة', icon: '🌸' }
+        ],
+        quizWord: { word: 'FISH', missing: 'F', display: '_ISH', icon: '🐟', choices: ['F', 'P', 'V'] }
+      }
+    };
+
+    // Fallback generator for remaining letters G-Z
+    const ALPHABET = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+    ALPHABET.forEach(letter => {
+      if (!LETTER_DATA[letter]) {
+        LETTER_DATA[letter] = {
+          char: letter,
+          phonics: `صوت الحرف ${letter}`,
+          words: [
+            { en: `Word ${letter}`, ar: `كلمة بحرف ${letter}`, icon: '🌟' },
+            { en: `Super ${letter}`, ar: `بطل ${letter}`, icon: '🚀' },
+            { en: `Happy ${letter}`, ar: `مرح ${letter}`, icon: '🎈' }
+          ],
+          quizWord: { word: `${letter}STAR`, missing: letter, display: `_${letter}TAR`, icon: '🌟', choices: [letter, 'A', 'S'] }
+        };
+      }
+    });
+
+    // Default Seed State
+    const defaultState = {
+      role: 'child', // 'child' | 'teacher'
+      currentStudentId: 'adam01',
+      activeLetter: 'A',
+      activeLessonTab: 'all',
+      passThreshold: 70, // Teacher configured passing threshold %
+      customActivities: [],
+      brushColor: '#ff6584',
+      brushStamp: null,
+      students: [
+        {
+          id: 'adam01',
+          name: 'آدم',
+          avatar: '🦁',
+          stars: 12,
+          progress: { A: 85, B: 50, C: 0 },
+          unlocked: ['A', 'B']
+        },
+        {
+          id: 'laila02',
+          name: 'ليلى',
+          avatar: '🌸',
+          stars: 18,
+          progress: { A: 100, B: 80, C: 40 },
+          unlocked: ['A', 'B', 'C']
+        },
+        {
+          id: 'yassin03',
+          name: 'ياسين',
+          avatar: '🚀',
+          stars: 9,
+          progress: { A: 75, B: 20 },
+          unlocked: ['A', 'B']
+        },
+        {
+          id: 'mariam04',
+          name: 'مريم',
+          avatar: '🦄',
+          stars: 15,
+          progress: { A: 90, B: 70, C: 15 },
+          unlocked: ['A', 'B', 'C']
+        }
+      ]
+    };
+
+    function loadState() {
+      try {
+        const stored = localStorage.getItem(STORAGE_KEY);
+        if (stored) {
+          const parsed = JSON.parse(stored);
+          return { ...defaultState, ...parsed };
+        }
+      } catch (e) {
+        console.warn('Could not read saved state:', e);
+      }
+      return defaultState;
+    }
+
+    let state = loadState();
+
+    function saveState() {
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+      } catch (e) {
+        console.warn('Could not save state:', e);
+      }
+    }
+
+    function getCurrentStudent() {
+      let st = state.students.find(s => s.id === state.currentStudentId);
+      if (!st && state.students.length > 0) {
+        st = state.students[0];
+        state.currentStudentId = st.id;
+      }
+      return st;
+    }
+
+    /* ==========================================================================
+       2. SOUND EFFECTS (Web Audio API - Offline & Reliable)
+       ========================================================================== */
+    let audioCtx = null;
+    function getAudioContext() {
+      if (!audioCtx) {
+        const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+        if (AudioContextClass) audioCtx = new AudioContextClass();
+      }
+      if (audioCtx && audioCtx.state === 'suspended') {
+        audioCtx.resume();
+      }
+      return audioCtx;
+    }
+
+    function playSound(type) {
+      try {
+        const ctx = getAudioContext();
+        if (!ctx) return;
+        const now = ctx.currentTime;
+
+        if (type === 'celebrate' || type === 'star') {
+          // Cheerful chime: C5, E5, G5, C6
+          [523.25, 659.25, 783.99, 1046.50].forEach((freq, i) => {
+            const osc = ctx.createOscillator();
+            const gain = ctx.createGain();
+            osc.type = 'triangle';
+            osc.frequency.setValueAtTime(freq, now + i * 0.08);
+            gain.gain.setValueAtTime(0.18, now + i * 0.08);
+            gain.gain.exponentialRampToValueAtTime(0.001, now + i * 0.08 + 0.35);
+            osc.connect(gain);
+            gain.connect(ctx.destination);
+            osc.start(now + i * 0.08);
+            osc.stop(now + i * 0.08 + 0.36);
+          });
+        } else if (type === 'correct') {
+          // Upbeat double ding
+          [659.25, 880].forEach((freq, i) => {
+            const osc = ctx.createOscillator();
+            const gain = ctx.createGain();
+            osc.type = 'sine';
+            osc.frequency.setValueAtTime(freq, now + i * 0.1);
+            gain.gain.setValueAtTime(0.2, now + i * 0.1);
+            gain.gain.exponentialRampToValueAtTime(0.001, now + i * 0.1 + 0.3);
+            osc.connect(gain);
+            gain.connect(ctx.destination);
+            osc.start(now + i * 0.1);
+            osc.stop(now + i * 0.1 + 0.31);
+          });
+        } else if (type === 'wrong') {
+          // Gentle "try again" soft boop
+          [349.23, 293.66].forEach((freq, i) => {
+            const osc = ctx.createOscillator();
+            const gain = ctx.createGain();
+            osc.type = 'sine';
+            osc.frequency.setValueAtTime(freq, now + i * 0.12);
+            gain.gain.setValueAtTime(0.15, now + i * 0.12);
+            gain.gain.exponentialRampToValueAtTime(0.001, now + i * 0.12 + 0.25);
+            osc.connect(gain);
+            gain.connect(ctx.destination);
+            osc.start(now + i * 0.12);
+            osc.stop(now + i * 0.12 + 0.26);
+          });
+        } else if (type === 'click') {
+          const osc = ctx.createOscillator();
+          const gain = ctx.createGain();
+          osc.type = 'sine';
+          osc.frequency.setValueAtTime(700, now);
+          gain.gain.setValueAtTime(0.08, now);
+          gain.gain.exponentialRampToValueAtTime(0.001, now + 0.08);
+          osc.connect(gain);
+          gain.connect(ctx.destination);
+          osc.start(now);
+          osc.stop(now + 0.09);
+        } else if (type === 'lock') {
+          const osc = ctx.createOscillator();
+          const gain = ctx.createGain();
+          osc.type = 'sawtooth';
+          osc.frequency.setValueAtTime(220, now);
+          gain.gain.setValueAtTime(0.1, now);
+          gain.gain.exponentialRampToValueAtTime(0.001, now + 0.15);
+          osc.connect(gain);
+          gain.connect(ctx.destination);
+          osc.start(now);
+          osc.stop(now + 0.16);
+        }
+      } catch (err) {
+        console.warn('Audio play error:', err);
+      }
+    }
+
+    // Speech Synthesis for English Phonics and Words (Gentle, slow Female Teacher Voice)
+    let selectedFemaleVoice = null;
+
+    function findBestFemaleVoice() {
+      if (!('speechSynthesis' in window)) return null;
+      const voices = window.speechSynthesis.getVoices();
+      if (!voices || voices.length === 0) return null;
+
+      const femaleKeywords = [
+        'zira', 'jenny', 'aria', 'samantha', 'victoria', 'karen', 'female',
+        'woman', 'sonia', 'libby', 'hazel', 'susan', 'catherine', 'ava', 'emma', 'olivia'
+      ];
+
+      // 1. Prioritize English female voice (Zira, Jenny, Samantha, etc.)
+      let match = voices.find(v => 
+        (v.lang.startsWith('en') || v.lang.startsWith('EN')) &&
+        femaleKeywords.some(kw => v.name.toLowerCase().includes(kw))
+      );
+
+      // 2. English Natural / Online voice (often high-clarity female)
+      if (!match) {
+        match = voices.find(v => 
+          (v.lang.startsWith('en') || v.lang.startsWith('EN')) && 
+          (v.name.includes('Natural') || v.name.includes('Google') || v.name.includes('Online'))
+        );
+      }
+
+      // 3. Any English voice
+      if (!match) {
+        match = voices.find(v => v.lang.startsWith('en'));
+      }
+
+      return match || voices[0];
+    }
+
+    if ('speechSynthesis' in window) {
+      window.speechSynthesis.onvoiceschanged = () => {
+        selectedFemaleVoice = findBestFemaleVoice();
+      };
+      selectedFemaleVoice = findBestFemaleVoice();
+    }
+
+    function speakText(text, lang = 'en-US') {
+      try {
+        if ('speechSynthesis' in window) {
+          window.speechSynthesis.cancel();
+          const utterance = new SpeechSynthesisUtterance(text);
+          utterance.lang = lang;
+
+          const voice = selectedFemaleVoice || findBestFemaleVoice();
+          if (voice) {
+            utterance.voice = voice;
+          }
+
+          // Slow, calm, and clearly articulated pace for kids
+          utterance.rate = 0.65;
+          // Gentle, warm female teacher pitch
+          utterance.pitch = 1.18;
+          window.speechSynthesis.speak(utterance);
+        }
+      } catch (e) {
+        console.warn('Speech synthesis error:', e);
+      }
+    }
+
+    /* ==========================================================================
+       3. CONFETTI EFFECT (Celebration Animation)
+       ========================================================================== */
+    const confettiCanvas = document.getElementById('confetti-canvas');
+    const confettiCtx = confettiCanvas.getContext('2d');
+    let confettiParticles = [];
+    let confettiAnimationId = null;
+
+    function resizeConfetti() {
+      confettiCanvas.width = window.innerWidth;
+      confettiCanvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resizeConfetti);
+    resizeConfetti();
+
+    function launchConfetti(count = 60) {
+      const colors = ['#ff6584', '#ffbe3d', '#38c88f', '#4f80e1', '#8f6cf7', '#ff9ff3'];
+      for (let i = 0; i < count; i++) {
+        confettiParticles.push({
+          x: window.innerWidth / 2 + (Math.random() - 0.5) * 200,
+          y: window.innerHeight / 2 - 80,
+          vx: (Math.random() - 0.5) * 14,
+          vy: (Math.random() - 0.8) * 16,
+          size: Math.random() * 8 + 6,
+          color: colors[Math.floor(Math.random() * colors.length)],
+          rotation: Math.random() * 360,
+          vRot: (Math.random() - 0.5) * 10,
+          alpha: 1,
+          shape: Math.random() > 0.5 ? 'rect' : 'circle'
+        });
+      }
+      if (!confettiAnimationId) {
+        animateConfetti();
+      }
+    }
+
+    function animateConfetti() {
+      confettiCtx.clearRect(0, 0, confettiCanvas.width, confettiCanvas.height);
+      for (let i = confettiParticles.length - 1; i >= 0; i--) {
+        const p = confettiParticles[i];
+        p.x += p.vx;
+        p.y += p.vy;
+        p.vy += 0.35; // gravity
+        p.rotation += p.vRot;
+        p.alpha -= 0.012;
+
+        if (p.alpha <= 0 || p.y > window.innerHeight) {
+          confettiParticles.splice(i, 1);
+          continue;
+        }
+
+        confettiCtx.save();
+        confettiCtx.globalAlpha = p.alpha;
+        confettiCtx.translate(p.x, p.y);
+        confettiCtx.rotate((p.rotation * Math.PI) / 180);
+        confettiCtx.fillStyle = p.color;
+
+        if (p.shape === 'rect') {
+          confettiCtx.fillRect(-p.size / 2, -p.size / 2, p.size, p.size * 0.6);
+        } else {
+          confettiCtx.beginPath();
+          confettiCtx.arc(0, 0, p.size / 2, 0, Math.PI * 2);
+          confettiCtx.fill();
+        }
+        confettiCtx.restore();
+      }
+
+      if (confettiParticles.length > 0) {
+        confettiAnimationId = requestAnimationFrame(animateConfetti);
+      } else {
+        confettiAnimationId = null;
+        confettiCtx.clearRect(0, 0, confettiCanvas.width, confettiCanvas.height);
+      }
+    }
+
+    /* ==========================================================================
+       4. CUSTOM KID-FRIENDLY ALERT & TOAST SYSTEM (NO BROWSER ALERT)
+       ========================================================================== */
+    let alertConfirmCallback = null;
+
+    function showKidAlert(options) {
+      // options: { title, desc, mascot, btnText, type, onConfirm }
+      const modal = document.getElementById('kidAlertModal');
+      const mascot = document.getElementById('alertMascot');
+      const title = document.getElementById('alertTitle');
+      const desc = document.getElementById('alertDesc');
+      const confirmBtn = document.getElementById('alertConfirmBtn');
+
+      mascot.textContent = options.mascot || '🌟';
+      title.textContent = options.title || 'رائع!';
+      desc.textContent = options.desc || '';
+      confirmBtn.textContent = options.btnText || 'تمام يا مس أسماء! 🌸';
+
+      // Type themes
+      if (options.type === 'lock') {
+        playSound('lock');
+        mascot.style.background = 'linear-gradient(135deg, #e2e8f0, #cbd5e1)';
+        confirmBtn.className = 'btn btn-soft';
+      } else if (options.type === 'success' || options.type === 'star') {
+        playSound('celebrate');
+        launchConfetti(50);
+        mascot.style.background = 'linear-gradient(135deg, #ffd36e, #ffaa00)';
+        confirmBtn.className = 'btn btn-green';
+      } else {
+        playSound('click');
+        mascot.style.background = 'linear-gradient(135deg, #85d4ff, #b5a3ff)';
+        confirmBtn.className = 'btn btn-pink';
+      }
+
+      alertConfirmCallback = options.onConfirm || null;
+      modal.classList.add('active');
+    }
+
+    function closeAlert() {
+      const modal = document.getElementById('kidAlertModal');
+      modal.classList.remove('active');
+      playSound('click');
+      if (alertConfirmCallback) {
+        const cb = alertConfirmCallback;
+        alertConfirmCallback = null;
+        cb();
+      }
+    }
+
+    function showToast(msg, icon = '✨') {
+      const toast = document.getElementById('toast');
+      const toastMsg = document.getElementById('toast-msg');
+      const toastIcon = document.getElementById('toast-icon');
+
+      toastMsg.textContent = msg;
+      toastIcon.textContent = icon;
+      toast.classList.add('show');
+      playSound('click');
+
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 3200);
+    }
+
+    /* ==========================================================================
+       5. GENERAL APPLICATION MODALS (Add Kid, Letter Manager, Rules)
+       ========================================================================== */
+    function openAppModal(title, htmlContent) {
+      document.getElementById('appModalTitle').textContent = title;
+      document.getElementById('appModalBody').innerHTML = htmlContent;
+      document.getElementById('appModal').classList.add('active');
+      playSound('click');
+    }
+
+    function closeAppModal() {
+      document.getElementById('appModal').classList.remove('active');
+      playSound('click');
+    }
+
+    /* ==========================================================================
+       6. USER ROLES & NAVIGATION
+       ========================================================================== */
+    function toggleRole() {
+      state.role = state.role === 'child' ? 'teacher' : 'child';
+      saveState();
+      playSound('click');
+      render();
+    }
+
+    function switchStudent(studentId) {
+      state.currentStudentId = studentId;
+      saveState();
+      const st = getCurrentStudent();
+      showToast(`أهلاً بالبطل ${st.name}! 🌟`, st.avatar);
+      render();
+    }
+
+    function openLetter(char) {
+      const st = getCurrentStudent();
+      if (!st.unlocked.includes(char)) {
+        showKidAlert({
+          title: `حرف ${char} لسه مقفول 🔒`,
+          desc: `يا بطل، عشان نفتح حرف ${char} محتاج تخلّص الحرف اللي قبله بنسبة ${state.passThreshold}% أو أكتر! يلا شاطر كمّل وورّي مس أسماء شطارتك 💪`,
+          mascot: '🔒',
+          btnText: 'يلا هجتهد وأفتحه! 🌟',
+          type: 'lock'
+        });
+        return;
+      }
+      state.activeLetter = char;
+      state.activeLessonTab = 'all';
+      saveState();
+      playSound('click');
+      render();
+    }
+
+    function setLessonTab(tabName) {
+      state.activeLessonTab = tabName;
+      playSound('click');
+      renderLessonContent();
+    }
+
+    /* ==========================================================================
+       7. TEACHER ACTIONS (Add Student, Manage Content, Change Rules)
+       ========================================================================== */
+    function openAddStudentModal() {
+      const avatars = ['🦁', '🐯', '🐰', '🐼', '🦊', '🦄', '🚀', '⭐', '🌸'];
+      const html = `
+        <div class="form-group">
+          <label>اسم الطفل / الطفلة</label>
+          <input id="newKidName" class="form-control" placeholder="مثلاً: كنزى، يوسف، فريدة..." autofocus>
+        </div>
+        <div class="form-group">
+          <label>اسم المستخدم (كود الدخول)</label>
+          <input id="newKidUser" class="form-control" placeholder="مثلاً: kenzy01">
+        </div>
+        <div class="form-group">
+          <label>اختاري صورة رمزية للطفل</label>
+          <div style="display:flex; gap:8px; flex-wrap:wrap; margin-top:8px;" id="avatarPicker">
+            ${avatars.map((av, idx) => `
+              <button type="button" class="btn-light btn-icon avatar-choice ${idx === 0 ? 'btn-soft' : ''}" 
+                style="font-size:24px;" onclick="selectAvatar('${av}', this)">
+                ${av}
+              </button>
+            `).join('')}
+          </div>
+          <input type="hidden" id="selectedAvatar" value="${avatars[0]}">
+        </div>
+        <div style="margin-top:24px; display:flex; gap:10px; justify-content:flex-end;">
+          <button class="btn btn-light" onclick="closeAppModal()">إلغاء</button>
+          <button class="btn btn-green" onclick="confirmAddStudent()">حفظ وإضافة الطفل 👧</button>
+        </div>
+      `;
+      openAppModal('إضافة طفل جديد للفصل 👧👦', html);
+    }
+
+    function selectAvatar(av, btn) {
+      document.querySelectorAll('.avatar-choice').forEach(b => b.classList.remove('btn-soft'));
+      btn.classList.add('btn-soft');
+      document.getElementById('selectedAvatar').value = av;
+      playSound('click');
+    }
+
+    function confirmAddStudent() {
+      const name = document.getElementById('newKidName').value.trim();
+      const user = document.getElementById('newKidUser').value.trim();
+      const avatar = document.getElementById('selectedAvatar').value;
+
+      if (!name) {
+        showToast('من فضلك اكتبي اسم الطفل أولاً ✏️', '⚠️');
+        return;
+      }
+      const newId = user ? user.toLowerCase().replace(/\s+/g, '') : 'kid_' + Date.now();
+
+      state.students.push({
+        id: newId,
+        name: name,
+        avatar: avatar || '🦁',
+        stars: 5,
+        progress: { A: 0 },
+        unlocked: ['A']
+      });
+
+      saveState();
+      closeAppModal();
+      showToast(`تمت إضافة البطل/ة ${name} بنجاح! 🌸`, avatar);
+      render();
+    }
+
+    function openRuleModal() {
+      const html = `
+        <div style="text-align: center; margin-bottom: 20px;">
+          <div style="font-size: 52px; margin-bottom: 8px;">🔐</div>
+          <h4 style="margin: 0; font-size: 18px;">نسبة النجاح لفتح الحروف التالية</h4>
+          <p style="color: var(--text-sub); font-size: 14px; margin-top: 6px;">
+            تستطيع مس أسماء ضبط النسبة المطلوبة ليجتازها الطفل في الحرف الحالي قبل أن يُفتح له الحرف التالي تلقائياً.
+          </p>
+        </div>
+        <div class="form-group" style="text-align:center;">
+          <label style="font-size: 16px; margin-bottom: 12px; display:block;">
+            النسبة الحالية: <strong id="ruleThresholdVal" style="color:var(--primary); font-size:22px;">${state.passThreshold}%</strong>
+          </label>
+          <input type="range" id="ruleSlider" min="50" max="95" step="5" value="${state.passThreshold}" 
+            style="width: 100%; accent-color: var(--primary);" 
+            oninput="document.getElementById('ruleThresholdVal').textContent = this.value + '%'">
+          <div style="display:flex; justify-content:space-between; font-size:12px; color:var(--text-sub); margin-top:6px;">
+            <span>50% (سهل للمبتدئين)</span>
+            <span>70% (الموصى به)</span>
+            <span>95% (إتقان تام)</span>
+          </div>
+        </div>
+        <div style="margin-top: 24px; display:flex; gap:10px; justify-content:flex-end;">
+          <button class="btn btn-light" onclick="closeAppModal()">إلغاء</button>
+          <button class="btn btn-green" onclick="saveRuleThreshold()">حفظ الإعدادات 💾</button>
+        </div>
+      `;
+      openAppModal('شرط فتح الحروف 🔐', html);
+    }
+
+    function saveRuleThreshold() {
+      const val = parseInt(document.getElementById('ruleSlider').value, 10);
+      state.passThreshold = val;
+      saveState();
+      closeAppModal();
+      showToast(`تم حفظ نسبة فتح الحروف: ${val}% 🎯`, '✅');
+      render();
+    }
+
+    function openManageLetterModal(char) {
+      const data = LETTER_DATA[char];
+      const html = `
+        <div style="display:flex; align-items:center; gap:16px; margin-bottom:20px; padding:14px; background:#f0f5ff; border-radius:18px;">
+          <div style="font-family:'Fredoka'; font-size:48px; font-weight:700; color:var(--primary);">${char} ${char.toLowerCase()}</div>
+          <div>
+            <h4 style="margin:0; font-size:17px;">إدارة محتوى حرف ${char}</h4>
+            <div style="font-size:13px; color:var(--text-sub); margin-top:3px;">${data.phonics}</div>
+          </div>
+          <button class="btn btn-soft btn-icon" style="margin-right:auto;" onclick="speakText('${char}')" title="سماع صوت الحرف">🔊</button>
+        </div>
+
+        <h4 style="margin:0 0 10px; font-size:15px;">الكلمات التفاعلية المخصصة للحرف:</h4>
+        <div style="display:grid; gap:8px; margin-bottom:18px;">
+          ${data.words.map((w, i) => `
+            <div style="display:flex; align-items:center; justify-content:space-between; padding:10px 14px; border:1px solid var(--border-subtle); border-radius:12px; background:white;">
+              <div style="display:flex; align-items:center; gap:10px;">
+                <span style="font-size:24px;">${w.icon}</span>
+                <div>
+                  <strong style="font-family:'Fredoka'; font-size:16px;">${w.en}</strong>
+                  <span style="color:var(--text-sub); font-size:13px; margin-right:8px;">(${w.ar})</span>
+                </div>
+              </div>
+              <button class="btn btn-light btn-icon" onclick="speakText('${w.en}')" title="نطق الكلمة">🔊</button>
+            </div>
+          `).join('')}
+        </div>
+
+        <div style="padding:14px; background:#fffbf0; border:1px solid #ffe9b8; border-radius:14px; margin-bottom:18px;">
+          <div style="font-weight:800; color:#8c6508; font-size:13.5px; margin-bottom:4px;">✨ تحكم مباشر للمعلمة:</div>
+          <div style="font-size:12.5px; color:#8c6508; line-height:1.6;">
+            تقدري تجربي الحرف كما يراه الأطفال بالضغط على زر "معاينة كطالب"، أو تمنحي طلابك نجوم تشجيعية من قائمة المتابعة.
+          </div>
+        </div>
+
+        <div style="display:flex; gap:10px; justify-content:flex-end;">
+          <button class="btn btn-light" onclick="closeAppModal()">إغلاق</button>
+          <button class="btn btn-green" onclick="previewAsChild('${char}')">معاينة الحرف كطالب 🚀</button>
+        </div>
+      `;
+      openAppModal(`إعدادات حرف ${char} 📚`, html);
+    }
+
+    function previewAsChild(char) {
+      closeAppModal();
+      state.role = 'child';
+      const st = getCurrentStudent();
+      if (!st.unlocked.includes(char)) {
+        st.unlocked.push(char); // Teacher preview unlocks it
+      }
+      state.activeLetter = char;
+      state.activeLessonTab = 'all';
+      saveState();
+      render();
+    }
+
+    function rewardStudentStar(studentId) {
+      const st = state.students.find(s => s.id === studentId);
+      if (st) {
+        st.stars = (st.stars || 0) + 1;
+        saveState();
+        playSound('celebrate');
+        launchConfetti(35);
+        showToast(`أحسنتِ يا مس أسماء! تم إهداء نجمة للبطل ${st.name} ⭐`, '🌟');
+        render();
+      }
+    }
+
+    /* ==========================================================================
+       8. STUDENT ACTIVITIES & PROGRESS LOGIC
+       ========================================================================== */
+    function recordActivityCompletion(activityName) {
+      const st = getCurrentStudent();
+      const l = state.activeLetter;
+      const prevScore = st.progress[l] || 0;
+      const newScore = Math.min(100, prevScore + 20);
+      st.progress[l] = newScore;
+      st.stars = (st.stars || 0) + 2;
+
+      let unlockedNext = null;
+      if (newScore >= state.passThreshold) {
+        const nextChar = ALPHABET[ALPHABET.indexOf(l) + 1];
+        if (nextChar && !st.unlocked.includes(nextChar)) {
+          st.unlocked.push(nextChar);
+          unlockedNext = nextChar;
+        }
+      }
+
+      saveState();
+
+      if (unlockedNext) {
+        showKidAlert({
+          title: `مبروك يا بطل! 🎉 فتحت حرف ${unlockedNext}!`,
+          desc: `شطووور جداً يا ${st.name}! حققت نسبة ${newScore}% في حرف ${l}، ومس أسماء فخورة بيك! دلوقتي تقدر تبدأ رحلة حرف ${unlockedNext} 🚀`,
+          mascot: '🏆',
+          btnText: `يلا نشوف حرف ${unlockedNext} 🌟`,
+          type: 'success',
+          onConfirm: () => {
+            state.activeLetter = unlockedNext;
+            state.activeLessonTab = 'all';
+            render();
+          }
+        });
+      } else {
+        showKidAlert({
+          title: `عاش يا بطل يا ${st.name}! ⭐`,
+          desc: `أحسنت في نشاط ${activityName}! زادت نجومك وكسبت +2 نجوم ذهبية، ومستوى شطارتك في حرف ${l} بقى ${newScore}%!`,
+          mascot: '🌟',
+          btnText: 'كمّل باقي الأنشطة 👏',
+          type: 'star',
+          onConfirm: () => {
+            renderLessonContent();
+          }
+        });
+      }
+    }
+
+    function checkQuizAnswer(chosenChar, correctChar) {
+      if (chosenChar === correctChar) {
+        playSound('correct');
+        speakText('Awesome job! ' + correctChar);
+        recordActivityCompletion('اسمع واختار الحرف');
+      } else {
+        playSound('wrong');
+        showToast(`قريب أوي يا بطل! اسمع الصوت تاني وحاول تختار الصح 💛`, '👂');
+      }
+    }
+
+    function checkWordAnswer(chosenChar, correctChar) {
+      const blank = document.getElementById('wordBlankSpan');
+      if (chosenChar === correctChar) {
+        if (blank) blank.textContent = chosenChar;
+        playSound('correct');
+        const data = LETTER_DATA[state.activeLetter];
+        speakText(data.quizWord.word);
+        recordActivityCompletion('تكوين الكلمة');
+      } else {
+        playSound('wrong');
+        showToast('مش هو ده الحرف يا بطل، فكّر وجرّب تاني 🐶', '💡');
+      }
+    }
+
+    /* ==========================================================================
+       9. CANVAS INTERACTIVE DRAWING (TRACING & COLORING)
+       ========================================================================== */
+    function initTracingCanvas() {
+      const canvas = document.getElementById('traceCanvas');
+      if (!canvas) return;
+
+      const rect = canvas.getBoundingClientRect();
+      const dpr = window.devicePixelRatio || 1;
+      canvas.width = rect.width * dpr;
+      canvas.height = rect.height * dpr;
+
+      const ctx = canvas.getContext('2d');
+      ctx.scale(dpr, dpr);
+      ctx.lineCap = 'round';
+      ctx.lineJoin = 'round';
+      ctx.lineWidth = 14;
+      ctx.strokeStyle = '#4f80e1';
+
+      let isDrawing = false;
+      let drawnPoints = 0;
+
+      function getPos(e) {
+        const r = canvas.getBoundingClientRect();
+        const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+        const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+        return {
+          x: clientX - r.left,
+          y: clientY - r.top
+        };
+      }
+
+      function startDraw(e) {
+        isDrawing = true;
+        const pos = getPos(e);
+        ctx.beginPath();
+        ctx.moveTo(pos.x, pos.y);
+        playSound('click');
+        e.preventDefault();
+      }
+
+      function doDraw(e) {
+        if (!isDrawing) return;
+        const pos = getPos(e);
+        ctx.lineTo(pos.x, pos.y);
+        ctx.stroke();
+        drawnPoints++;
+        e.preventDefault();
+      }
+
+      function endDraw() {
+        if (isDrawing && drawnPoints > 25) {
+          // Drawn enough to consider completed
+        }
+        isDrawing = false;
+      }
+
+      canvas.onpointerdown = startDraw;
+      canvas.onpointermove = doDraw;
+      canvas.onpointerup = endDraw;
+      canvas.onpointerleave = endDraw;
+
+      canvas.ontouchstart = startDraw;
+      canvas.ontouchmove = doDraw;
+      canvas.ontouchend = endDraw;
+    }
+
+    function clearTracingCanvas() {
+      const canvas = document.getElementById('traceCanvas');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      playSound('click');
+      showToast('مسحنا اللوحة! يلا ابدأ من النقطة الخضراء ✍️', '🌱');
+    }
+
+    function initColoringCanvas() {
+      const canvas = document.getElementById('paintCanvas');
+      if (!canvas) return;
+
+      const rect = canvas.getBoundingClientRect();
+      const dpr = window.devicePixelRatio || 1;
+      canvas.width = rect.width * dpr;
+      canvas.height = rect.height * dpr;
+
+      const ctx = canvas.getContext('2d');
+      ctx.scale(dpr, dpr);
+
+      // Draw background letter stencil
+      ctx.fillStyle = '#f8faff';
+      ctx.fillRect(0, 0, rect.width, rect.height);
+      ctx.font = 'bold 150px Fredoka, sans-serif';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillStyle = '#e2ecfc';
+      ctx.fillText(state.activeLetter, rect.width / 2, rect.height / 2);
+
+      let isDrawing = false;
+
+      function getPos(e) {
+        const r = canvas.getBoundingClientRect();
+        const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+        const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+        return {
+          x: clientX - r.left,
+          y: clientY - r.top
+        };
+      }
+
+      function startDraw(e) {
+        const pos = getPos(e);
+        if (state.brushStamp) {
+          // Stamp mode!
+          ctx.font = '36px sans-serif';
+          ctx.textAlign = 'center';
+          ctx.textBaseline = 'middle';
+          ctx.fillText(state.brushStamp, pos.x, pos.y);
+          playSound('click');
+          e.preventDefault();
+          return;
+        }
+
+        isDrawing = true;
+        ctx.beginPath();
+        ctx.moveTo(pos.x, pos.y);
+        ctx.lineCap = 'round';
+        ctx.lineJoin = 'round';
+        ctx.lineWidth = 18;
+        ctx.strokeStyle = state.brushColor || '#ff6584';
+        e.preventDefault();
+      }
+
+      function doDraw(e) {
+        if (!isDrawing || state.brushStamp) return;
+        const pos = getPos(e);
+        ctx.lineTo(pos.x, pos.y);
+        ctx.stroke();
+        e.preventDefault();
+      }
+
+      function endDraw() {
+        isDrawing = false;
+      }
+
+      canvas.onpointerdown = startDraw;
+      canvas.onpointermove = doDraw;
+      canvas.onpointerup = endDraw;
+      canvas.onpointerleave = endDraw;
+    }
+
+    function selectColor(color, el) {
+      state.brushColor = color;
+      state.brushStamp = null;
+      document.querySelectorAll('.palette-dot').forEach(d => d.classList.remove('active'));
+      document.querySelectorAll('.stamp-btn').forEach(s => s.classList.remove('active'));
+      if (el) el.classList.add('active');
+      playSound('click');
+    }
+
+    function selectStamp(emoji, el) {
+      state.brushStamp = emoji;
+      document.querySelectorAll('.stamp-btn').forEach(s => s.classList.remove('active'));
+      if (el) el.classList.add('active');
+      playSound('click');
+      showToast(`اخترت ملصق ${emoji}، اضغط في أي مكان في اللوحة لتضعه!`, emoji);
+    }
+
+    /* ==========================================================================
+       10. UI RENDERING (CHILD VIEW & TEACHER VIEW)
+       ========================================================================== */
+    function render() {
+      // Header Student Switcher
+      const kidSelectorWrap = document.getElementById('kidSelectorWrap');
+      const roleBtn = document.getElementById('roleSwitchBtn');
+
+      if (state.role === 'child') {
+        roleBtn.innerHTML = '👩‍🏫 لوحة مس أسماء';
+        roleBtn.className = 'btn btn-soft';
+
+        kidSelectorWrap.innerHTML = `
+          <div style="display:flex; align-items:center; gap:8px; background:white; padding:4px 10px; border-radius:30px; border:1.5px solid var(--border-subtle);">
+            <span style="font-size:20px;">${getCurrentStudent().avatar}</span>
+            <select style="border:0; background:transparent; font-weight:800; color:var(--navy); outline:none; cursor:pointer;" 
+              onchange="switchStudent(this.value)">
+              ${state.students.map(s => `
+                <option value="${s.id}" ${s.id === state.currentStudentId ? 'selected' : ''}>
+                  ${s.name} (${s.stars} ⭐)
+                </option>
+              `).join('')}
+            </select>
+          </div>
+        `;
+        renderChildDashboard();
+      } else {
+        roleBtn.innerHTML = '👶 وضع الطفل (الدروس)';
+        roleBtn.className = 'btn btn-pink';
+        kidSelectorWrap.innerHTML = `
+          <span class="hero-pill" style="background:#eaf1ff; color:var(--primary);">
+            🌸 إشراف المعلمة: مس أسماء
+          </span>
+        `;
+        renderTeacherDashboard();
+      }
+    }
+
+    /* ---------------- Child Dashboard ---------------- */
+    function renderChildDashboard() {
+      const student = getCurrentStudent();
+      const st = student;
+      const progressKeys = Object.keys(st.progress);
+      const avgProgress = progressKeys.length ? 
+        Math.round(progressKeys.reduce((acc, k) => acc + (st.progress[k] || 0), 0) / progressKeys.length) : 0;
+      const masteredCount = Object.values(st.progress).filter(v => v >= state.passThreshold).length;
+
+      // Check if user is inside a specific letter view or home
+      if (state.activeLetter && state.activeLessonTab !== 'overview_home') {
+        renderLetterWorkspace();
+        return;
+      }
+
+      const html = `
+        <!-- Hero Card -->
+        <section class="hero-card">
+          <div class="hero-info">
+            <div class="hero-badge-row">
+              <span class="hero-pill">🌟 بطل الأسبوع: ${st.name}</span>
+              <span class="hero-pill">🏆 النجوم: ${st.stars} نجمة</span>
+            </div>
+            <h1>أهلاً يا بطل يا ${st.name}! ${st.avatar}</h1>
+            <p>
+              يلا نتعلم حروف جديدة ونلعب ألعاب ممتعة مع مس أسماء! كل حرف هتتقنه هيفتحلك الحرف اللي بعده ويديك نجوم ذهبية براقة! ✨
+            </p>
+            <button class="btn btn-green" onclick="openLetter('${st.unlocked[st.unlocked.length - 1] || 'A'}')">
+              كمّل تعلّم حرف (${st.unlocked[st.unlocked.length - 1] || 'A'}) ←
+            </button>
+          </div>
+          <div class="hero-art-side">
+            <div class="floating-mascot">🦁</div>
+            <div style="font-size:55px;">📚🌈</div>
+          </div>
+        </section>
+
+        <!-- Grid Dashboard -->
+        <div class="grid">
+          <!-- Main Progress -->
+          <section class="card s-8">
+            <div class="card-head">
+              <h2 class="card-title">🏆 رحلة التعلّم والشطارة</h2>
+              <span style="font-weight:900; font-size:22px; color:var(--primary);">${avgProgress}%</span>
+            </div>
+            <div class="progress-track">
+              <div class="progress-fill" style="width: ${avgProgress}%;"></div>
+            </div>
+
+            <div class="level-boxes">
+              <div class="level-box active">
+                <span style="font-size:26px;">🌱</span>
+                <b>المستوى الأول</b>
+                <small>حروف A إلى F • شغالين عليه</small>
+              </div>
+              <div class="level-box locked">
+                <span style="font-size:26px;">🚀</span>
+                <b>المستوى الثاني</b>
+                <small>حروف G إلى M • هيتفتح قريب</small>
+              </div>
+              <div class="level-box locked">
+                <span style="font-size:26px;">👑</span>
+                <b>المستوى الذهبي</b>
+                <small>تكوين جمل وقراءة قصص</small>
+              </div>
+            </div>
+          </section>
+
+          <!-- Badges & Stars -->
+          <section class="card s-4">
+            <div class="card-head">
+              <h2 class="card-title">⭐ صندوق النجوم</h2>
+            </div>
+            <div style="text-align:center; padding:10px 0;">
+              <div style="font-size:56px; font-weight:900; color:var(--accent-gold); line-height:1;">
+                ${st.stars}
+              </div>
+              <div style="color:var(--text-sub); font-size:14px; font-weight:700; margin-top:6px;">نجمة كسبتها بشطارتك</div>
+            </div>
+            <div style="padding:14px; background:#f4f9ff; border:1.5px solid #dbe8fd; border-radius:16px; margin-top:14px; font-size:13px; line-height:1.6; color:var(--navy);">
+              🎯 <strong>قاعدة المس أسماء:</strong><br>
+              كل حرف تجيب فيه <b>${state.passThreshold}%</b> بيتفتحلك الحرف اللي بعده فوراً وتكسب وسام بطل الحروف!
+            </div>
+          </section>
+
+          <!-- Letters Shelf -->
+          <section class="card s-12">
+            <div class="card-head">
+              <h2 class="card-title">📚 حروفي الممتعة — المستوى الأول</h2>
+              <span style="color:var(--text-sub); font-size:13px; font-weight:700;">اضغط على أي حرف مفتوح للبدء</span>
+            </div>
+            <div class="letters-shelf">
+              ${ALPHABET.slice(0, 12).map(char => {
+                const score = st.progress[char] || 0;
+                const isUnlocked = st.unlocked.includes(char);
+                const isDone = score >= state.passThreshold;
+                const isCurrent = isUnlocked && !isDone;
+
+                return `
+                  <button class="letter-btn ${isDone ? 'done' : ''} ${!isUnlocked ? 'locked' : ''} ${isCurrent ? 'current' : ''}"
+                    onclick="openLetter('${char}')">
+                    <span class="char-display">${char} ${char.toLowerCase()}</span>
+                    <span class="status-text">
+                      ${!isUnlocked ? '🔒 مقفول' : isDone ? '✓ متقن 100%' : score > 0 ? score + '% خلصت' : 'ابدأ الآن ✨'}
+                    </span>
+                  </button>
+                `;
+              }).join('')}
+            </div>
+          </section>
+
+          <!-- Tasks & Curriculum Breakdown -->
+          <section class="card s-12">
+            <div class="card-head">
+              <h2 class="card-title">🧩 جدول الأنشطة مع مس أسماء</h2>
+            </div>
+            <div class="task-item">
+              <div class="task-icon">🔊</div>
+              <div class="task-info">
+                <strong>نطق الحرف الفونكس (Phonics Sound)</strong>
+                <small>الطفل بيسمع الصوت الطبيعي للحرف باللغة الإنجليزية ويكرره مع مس أسماء</small>
+              </div>
+              <span class="tag-badge done">تأسيس صوتي</span>
+            </div>
+            <div class="task-item">
+              <div class="task-icon">✍️</div>
+              <div class="task-info">
+                <strong>تتبّع الحرف والكتابة الصحيحة (Letter Tracing)</strong>
+                <small>لوحة رسم تفاعلية ترشد يد الطفل للاتجاه الصحيح لكتابة الحرف الكبير والصغير</small>
+              </div>
+              <span class="tag-badge">مهارات حركية</span>
+            </div>
+            <div class="task-item">
+              <div class="task-icon">🎧</div>
+              <div class="task-info">
+                <strong>لعبة اسمع واختار (Listening Quiz)</strong>
+                <small>تحدي تفاعلي لتمييز الحرف صوتياً وبصرياً بين الحروف المختلفة</small>
+              </div>
+              <span class="tag-badge">تحدي وذكاء</span>
+            </div>
+            <div class="task-item">
+              <div class="task-icon">🎨</div>
+              <div class="task-info">
+                <strong>لوحة التلوين والملصقات (Coloring & Stickers)</strong>
+                <small>تفريغ طاقة الطفل الإبداعية بتلوين الحرف وإضافة ستيكرات لطيفة</small>
+              </div>
+              <span class="tag-badge done">إبداع ومرح</span>
+            </div>
+          </section>
+        </div>
+      `;
+
+      document.getElementById('appMount').innerHTML = html;
+    }
+
+    /* ---------------- Letter Workspace View ---------------- */
+    function renderLetterWorkspace() {
+      const char = state.activeLetter;
+      const data = LETTER_DATA[char];
+      const st = getCurrentStudent();
+      const score = st.progress[char] || 0;
+
+      const tabs = [
+        { id: 'all', title: '📋 كل الأنشطة', icon: '📋' },
+        { id: 'sound', title: '🔊 صوت الحرف وكلماته', icon: '🔊' },
+        { id: 'trace', title: '✍️ تتبّع وكتابة', icon: '✍️' },
+        { id: 'quiz', title: '🎧 اسمع واختار', icon: '🎧' },
+        { id: 'word', title: '🧩 كوّن الكلمة', icon: '🧩' },
+        { id: 'color', title: '🎨 لوّن وابدع', icon: '🎨' }
+      ];
+
+      const html = `
+        <div class="lesson-container">
+          <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:14px;">
+            <button class="btn btn-light" onclick="state.activeLessonTab = 'overview_home'; render();">
+              ← رجوع للحروف
+            </button>
+            <div style="display:flex; align-items:center; gap:8px;">
+              <span style="font-size:14px; font-weight:800; color:var(--text-sub);">المستوى الأول • حرف ${char}</span>
+              <span class="tag-badge ${score >= state.passThreshold ? 'done' : ''}">${score}% إتقان</span>
+            </div>
+          </div>
+
+          <div class="lesson-card">
+            <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:16px;">
+              <div style="text-align:right;">
+                <h2 style="margin:0 0 4px; font-size:24px; font-weight:900;">
+                  يلا نتعلم حرف ${char} ${char.toLowerCase()}! 🌈
+                </h2>
+                <div style="color:var(--text-sub); font-size:14px; font-weight:700;">
+                  ${data.phonics}
+                </div>
+              </div>
+              <button class="btn btn-soft btn-icon" onclick="speakText('${char}')" title="اسمع صوت الحرف">
+                🔊
+              </button>
+            </div>
+
+            <!-- Progress bar for current letter -->
+            <div class="progress-track" style="margin-bottom:20px;">
+              <div class="progress-fill" style="width: ${score}%;"></div>
+            </div>
+
+            <!-- Tabs row -->
+            <div class="nav-tabs">
+              ${tabs.map(t => `
+                <button class="tab-pill ${state.activeLessonTab === t.id ? 'active' : ''}" onclick="setLessonTab('${t.id}')">
+                  ${t.title}
+                </button>
+              `).join('')}
+            </div>
+
+            <!-- Dynamic Tab Content Mount -->
+            <div id="lessonTabContent"></div>
+          </div>
+        </div>
+      `;
+
+      document.getElementById('appMount').innerHTML = html;
+      renderLessonContent();
+    }
+
+    function renderLessonContent() {
+      const container = document.getElementById('lessonTabContent');
+      if (!container) return;
+
+      const char = state.activeLetter;
+      const data = LETTER_DATA[char];
+      const tab = state.activeLessonTab;
+
+      // 1. ALL ACTIVITIES OVERVIEW
+      if (tab === 'all') {
+        container.innerHTML = `
+          <div class="big-char-card">
+            <div style="font-size:14px; font-weight:800; color:var(--text-sub); margin-bottom:6px;">الحرف الكبير والصغير</div>
+            <div class="big-letter-text">${char} ${char.toLowerCase()}</div>
+            <button class="btn btn-soft" onclick="speakText('${char}')" style="margin-top:8px;">
+              🔊 اسمع صوت الحرف مع مس أسماء
+            </button>
+          </div>
+
+          <h3 style="text-align:right; font-size:18px; margin:20px 0 12px;">أنشطة حرف ${char}:</h3>
+          <div class="task-item" onclick="setLessonTab('sound')">
+            <div class="task-icon">🔊</div>
+            <div class="task-info">
+              <strong>اسمع صوت الحرف والكلمات</strong>
+              <small>استمع للنطق الصحيح وشاهد صور الكلمات</small>
+            </div>
+            <button class="btn btn-soft">ابدأ ➔</button>
+          </div>
+          <div class="task-item" onclick="setLessonTab('trace')">
+            <div class="task-icon">✍️</div>
+            <div class="task-info">
+              <strong>تتبّع واكتب الحرف</strong>
+              <small>امشي على النقط واكتب حرف ${char}</small>
+            </div>
+            <button class="btn btn-soft">ابدأ ➔</button>
+          </div>
+          <div class="task-item" onclick="setLessonTab('quiz')">
+            <div class="task-icon">🎧</div>
+            <div class="task-info">
+              <strong>تحدي اسمع واختار</strong>
+              <small>اسمع الصوت واضغط على الحرف الصحيح</small>
+            </div>
+            <button class="btn btn-soft">ابدأ ➔</button>
+          </div>
+          <div class="task-item" onclick="setLessonTab('word')">
+            <div class="task-icon">🧩</div>
+            <div class="task-info">
+              <strong>تكوين الكلمة</strong>
+              <small>اكمل الحرف الناقص في الكلمة المصورة</small>
+            </div>
+            <button class="btn btn-soft">ابدأ ➔</button>
+          </div>
+          <div class="task-item" onclick="setLessonTab('color')">
+            <div class="task-icon">🎨</div>
+            <div class="task-info">
+              <strong>لوّن الحرف وضع ملصقات</strong>
+              <small>لوحة رسم وإبداع حرة للأطفال</small>
+            </div>
+            <button class="btn btn-soft">ابدأ ➔</button>
+          </div>
+        `;
+        return;
+      }
+
+      // 2. SOUND & FLASHCARDS
+      if (tab === 'sound') {
+        container.innerHTML = `
+          <div class="big-char-card">
+            <div style="font-size:46px;">🔊</div>
+            <h3 style="margin:8px 0; font-size:22px;">اسمع وكرّر صوت حرف ${char}</h3>
+            <p style="color:var(--text-sub); font-size:14px; margin-bottom:16px;">
+              دوس على زر الصوت واسمع النطق الجميل، وقول مع مس أسماء بصوت عالي! 🌟
+            </p>
+            <button class="btn btn-pink" onclick="speakText('${char}')" style="font-size:16px; padding:12px 28px;">
+              ▶️ اسمع صوت الحرف: ${char}
+            </button>
+          </div>
+
+          <h3 style="text-align:right; font-size:18px; margin:24px 0 12px;">كلمات تبدأ بحرف ${char}:</h3>
+          <div class="flashcards-row">
+            ${data.words.map(w => `
+              <div class="flashcard" onclick="speakText('${w.en}')">
+                <span class="flashcard-audio-hint">🔊</span>
+                <div class="flashcard-icon">${w.icon}</div>
+                <div class="flashcard-en">${w.en}</div>
+                <div class="flashcard-ar">${w.ar}</div>
+              </div>
+            `).join('')}
+          </div>
+
+          <div style="margin-top:24px;">
+            <button class="btn btn-green" onclick="recordActivityCompletion('سماع صوت الحرف وكلماته')">
+              خلصت وسَمّعت لمس أسماء! ⭐
+            </button>
+          </div>
+        `;
+        return;
+      }
+
+      // 3. TRACING PAD
+      if (tab === 'trace') {
+        container.innerHTML = `
+          <h3 style="margin:4px 0 8px; font-size:20px;">امشي على خط الحرف ✍️</h3>
+          <p style="color:var(--text-sub); font-size:14px; margin-bottom:12px;">
+            ابدأ من <span style="color:var(--accent-mint); font-weight:800;">النقطة الخضراء</span> وامشي بصباعك أو بالماوس على شكل الحرف!
+          </p>
+
+          <div class="trace-wrapper">
+            <div class="trace-guide-char">${char}</div>
+            <div class="trace-dot-start"></div>
+            <canvas id="traceCanvas" class="trace-canvas"></canvas>
+          </div>
+
+          <div style="display:flex; gap:10px; justify-content:center; margin-top:16px;">
+            <button class="btn btn-light" onclick="clearTracingCanvas()">
+              🔄 امسح وجرب تاني
+            </button>
+            <button class="btn btn-green" onclick="recordActivityCompletion('كتابة وتتبّع الحرف')">
+              كتبت الحرف بخط جميل! ⭐
+            </button>
+          </div>
+        `;
+        setTimeout(initTracingCanvas, 50);
+        return;
+      }
+
+      // 4. LISTENING QUIZ
+      if (tab === 'quiz') {
+        // Generate 3 choices including the current char
+        const otherChars = ALPHABET.filter(c => c !== char);
+        const shuffled = [char, otherChars[Math.floor(Math.random() * otherChars.length)], otherChars[(Math.floor(Math.random() * otherChars.length) + 1) % otherChars.length]].sort(() => Math.random() - 0.5);
+
+        container.innerHTML = `
+          <div style="font-size:52px; margin-bottom:8px;">🎧</div>
+          <h3 style="margin:4px 0 8px; font-size:22px;">اسمع واختار الحرف الصح!</h3>
+          <p style="color:var(--text-sub); font-size:14.5px; margin-bottom:18px;">
+            اضغط على زر الاستماع، وبعدها اضغط على الحرف اللي سمعته يا بطل!
+          </p>
+
+          <button class="btn btn-pink" onclick="speakText('${char}')" style="margin-bottom:18px; padding:12px 24px;">
+            🔊 اسمع صوت الحرف تاني
+          </button>
+
+          <div class="quiz-options">
+            ${shuffled.map(c => `
+              <button class="quiz-btn" onclick="checkQuizAnswer('${c}', '${char}')">
+                ${c}
+              </button>
+            `).join('')}
+          </div>
+        `;
+        // Speak automatically
+        setTimeout(() => speakText(char), 300);
+        return;
+      }
+
+      // 5. WORD BUILDER
+      if (tab === 'word') {
+        const q = data.quizWord;
+        container.innerHTML = `
+          <div style="font-size:60px; margin-bottom:6px;">${q.icon}</div>
+          <h3 style="margin:4px 0 8px; font-size:22px;">كوّن كلمة ${q.word}</h3>
+          <p style="color:var(--text-sub); font-size:14px; margin-bottom:14px;">
+            اختار الحرف الناقص في بداية الكلمة:
+          </p>
+
+          <div class="word-slot-box">
+            <span id="wordBlankSpan" class="word-slot-blank">_</span>${q.word.slice(1)}
+          </div>
+
+          <div class="quiz-options">
+            ${q.choices.map(c => `
+              <button class="quiz-btn" onclick="checkWordAnswer('${c}', '${q.missing}')">
+                ${c}
+              </button>
+            `).join('')}
+          </div>
+        `;
+        return;
+      }
+
+      // 6. COLORING & STICKERS
+      if (tab === 'color') {
+        const colors = ['#ff6584', '#ffbe3d', '#38c88f', '#4f80e1', '#8f6cf7', '#2d3436'];
+        const stamps = ['⭐', '🌸', '🌈', '🚀', '🍎', '🐾'];
+
+        container.innerHTML = `
+          <h3 style="margin:4px 0 6px; font-size:20px;">يلا نلوّن حرف ${char} ونحط ملصقات 🎨</h3>
+          <p style="color:var(--text-sub); font-size:13.5px; margin-bottom:10px;">
+            اختار لونك المفضل، أو اختار ملصق واضغط على اللوحة عشان تحطه!
+          </p>
+
+          <!-- Palette -->
+          <div class="palette-row">
+            ${colors.map((c, i) => `
+              <button class="palette-dot ${i === 0 ? 'active' : ''}" style="background:${c};" onclick="selectColor('${c}', this)"></button>
+            `).join('')}
+          </div>
+
+          <!-- Stamps -->
+          <div class="stamp-row">
+            ${stamps.map(s => `
+              <button class="stamp-btn" onclick="selectStamp('${s}', this)">${s}</button>
+            `).join('')}
+          </div>
+
+          <div style="display:flex; justify-content:center; margin:10px 0;">
+            <canvas id="paintCanvas" style="width:100%; max-width:440px; height:240px; border-radius:20px; border:2px solid var(--border-subtle); box-shadow:var(--shadow-sm); touch-action:none;"></canvas>
+          </div>
+
+          <div style="display:flex; gap:10px; justify-content:center; margin-top:14px;">
+            <button class="btn btn-light" onclick="initColoringCanvas(); showToast('تم مسح اللوحة! ابدأ التلوين من جديد 🎨');">
+              🔄 امسح وابدأ من جديد
+            </button>
+            <button class="btn btn-green" onclick="recordActivityCompletion('تلوين الحرف وإبداع')">
+              خلصت التلوين واللوحة جاهزة! 🌟
+            </button>
+          </div>
+        `;
+        setTimeout(initColoringCanvas, 50);
+        return;
+      }
+    }
+
+    /* ---------------- Teacher Dashboard ---------------- */
+    function renderTeacherDashboard() {
+      const totalStudents = state.students.length;
+      const totalStars = state.students.reduce((acc, s) => acc + (s.stars || 0), 0);
+
+      const html = `
+        <!-- Hero Banner for Miss Asmaa -->
+        <section class="hero-card" style="background: linear-gradient(125deg, #fdf4f7 0%, #f3efff 60%, #eaf1ff 100%);">
+          <div class="hero-info">
+            <div class="hero-badge-row">
+              <span class="hero-pill" style="background:white; color:var(--accent-pink);">🌸 أهلاً بحضرتك يا مس أسماء</span>
+              <span class="hero-pill">🏫 فصل أبطال الروضة والابتدائي</span>
+            </div>
+            <h1>لوحة المعلمة والإشراف 👩‍🏫</h1>
+            <p>
+              من هنا تقدري تتابعي مستوى تقدم كل طفل، وتتحكمي في شروط فتح الحروف، وتراجعي المحتوى والأصوات، وتهدي أطفالك نجوم تشجيعية فورية.
+            </p>
+            <div style="display:flex; gap:10px; flex-wrap:wrap;">
+              <button class="btn btn-pink" onclick="openAddStudentModal()">
+                ＋ إضافة طفل جديد
+              </button>
+              <button class="btn btn-soft" onclick="openRuleModal()">
+                🔐 ضبط شرط فتح الحروف (${state.passThreshold}%)
+              </button>
+            </div>
+          </div>
+          <div class="hero-art-side">
+            <div class="floating-mascot">👩‍🏫</div>
+            <div style="font-size:55px;">🌷📚</div>
+          </div>
+        </section>
+
+        <!-- Stats row -->
+        <div class="teacher-stat-grid" style="margin-top:24px;">
+          <div class="teacher-stat-card">
+            <span style="font-size:26px;">👧👦</span>
+            <span class="val">${totalStudents}</span>
+            <span class="lbl">إجمالي الأطفال المسجلين</span>
+          </div>
+          <div class="teacher-stat-card">
+            <span style="font-size:26px;">⭐</span>
+            <span class="val">${totalStars}</span>
+            <span class="lbl">نجوم التميز الممنوحة</span>
+          </div>
+          <div class="teacher-stat-card">
+            <span style="font-size:26px;">🎯</span>
+            <span class="val">${state.passThreshold}%</span>
+            <span class="lbl">نسبة اجتياز الحرف</span>
+          </div>
+          <div class="teacher-stat-card">
+            <span style="font-size:26px;">📚</span>
+            <span class="val">26</span>
+            <span class="lbl">حروف اللغة الإنجليزية</span>
+          </div>
+        </div>
+
+        <div class="grid">
+          <!-- Student Follow-up Column -->
+          <section class="card s-8">
+            <div class="card-head">
+              <h2 class="card-title">👧 متابعة شطارة وتقدم الأطفال</h2>
+              <button class="btn btn-soft" onclick="openAddStudentModal()">＋ طفل جديد</button>
+            </div>
+
+            ${state.students.map(st => {
+              const keys = Object.keys(st.progress);
+              const avg = keys.length ? Math.round(keys.reduce((a, k) => a + (st.progress[k] || 0), 0) / keys.length) : 0;
+              return `
+                <div class="kid-row-card">
+                  <div class="kid-avatar">${st.avatar}</div>
+                  <div style="flex:1; min-width:0;">
+                    <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:4px;">
+                      <div>
+                        <strong style="font-size:16px;">${st.name}</strong>
+                        <small style="color:var(--text-sub); margin-right:8px;">(الحروف المفتوحة: ${st.unlocked.join('، ')})</small>
+                      </div>
+                      <div style="display:flex; align-items:center; gap:8px;">
+                        <span style="font-weight:900; color:var(--accent-gold);">⭐ ${st.stars}</span>
+                        <span style="font-weight:800; font-size:14px; color:var(--primary);">${avg}%</span>
+                      </div>
+                    </div>
+                    <div class="progress-track">
+                      <div class="progress-fill" style="width:${avg}%;"></div>
+                    </div>
+                  </div>
+                  <div style="display:flex; gap:6px;">
+                    <button class="btn btn-light btn-icon" onclick="rewardStudentStar('${st.id}')" title="إهداء نجمة تشجيعية">
+                      ⭐
+                    </button>
+                    <button class="btn btn-soft" style="padding:6px 12px; font-size:12.5px;" onclick="switchStudent('${st.id}'); toggleRole();">
+                      تجربة كطالب
+                    </button>
+                  </div>
+                </div>
+              `;
+            }).join('')}
+          </section>
+
+          <!-- Quick Actions & Teacher Tools -->
+          <section class="card s-4">
+            <div class="card-head">
+              <h2 class="card-title">⚡ اختصارات وإعدادات</h2>
+            </div>
+
+            <div class="task-item" onclick="openAddStudentModal()" style="cursor:pointer;">
+              <div class="task-icon">👧</div>
+              <div class="task-info">
+                <strong>إضافة طفل جديد</strong>
+                <small>تسجيل تلميذ جديد في الفصل</small>
+              </div>
+              <span>＋</span>
+            </div>
+
+            <div class="task-item" onclick="openRuleModal()" style="cursor:pointer;">
+              <div class="task-icon">🔐</div>
+              <div class="task-info">
+                <strong>شرط فتح الحروف</strong>
+                <small>النسبة الحالية: ${state.passThreshold}%</small>
+              </div>
+              <span class="tag-badge done">${state.passThreshold}%</span>
+            </div>
+
+            <div style="padding:16px; background:#fffbf0; border:1px solid #ffe9b8; border-radius:18px; margin-top:16px; font-size:13px; line-height:1.7; color:#856404;">
+              💡 <strong>نصيحة مس أسماء:</strong><br>
+              الأطفال في هذا السن يتعلمون أسرع عند ربط الحرف بالصوت والصورة، ونظام النجوم يزيد من شغفهم لإكمال الحروف بالتتابع!
+            </div>
+          </section>
+
+          <!-- Letters & Curriculum Manager -->
+          <section class="card s-12">
+            <div class="card-head">
+              <h2 class="card-title">📖 إدارة محتوى الحروف والأنشطة</h2>
+              <span style="font-size:13px; color:var(--text-sub); font-weight:700;">اضغطي على أي حرف لمعاينته وتعديله</span>
+            </div>
+
+            <div class="letters-shelf">
+              ${ALPHABET.slice(0, 12).map(char => `
+                <button class="letter-btn" onclick="openManageLetterModal('${char}')">
+                  <span class="char-display">${char} ${char.toLowerCase()}</span>
+                  <span class="status-text" style="color:var(--primary);">إعدادات الحرف ⚙️</span>
+                </button>
+              `).join('')}
+            </div>
+          </section>
+        </div>
+      `;
+
+      document.getElementById('appMount').innerHTML = html;
+    }
+
+    /* ==========================================================================
+       11. INITIALIZATION
+       ========================================================================== */
+    window.addEventListener('DOMContentLoaded', () => {
+      render();
+    });
+    render();
+  </script>
+</body>
+</html>
